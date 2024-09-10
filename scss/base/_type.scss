@@ -1,0 +1,26 @@
+@mixin body-text{
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 14px;
+}
+
+.body-text, p{
+    @include body-text;
+}
+
+@mixin detalle-text{
+    font-family: $font-detalle;
+    font-size: 14px;
+    line-height: 14px;
+    font-weight: 400;
+}
+
+.detalle{
+    @include detalle-text;
+}
+
+@mixin h2{
+    font-family: $font-detalle;
+    line-height: 20px;
+}

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <link rel="icon" href="./test.ico">
+    <title>TTT Boilerplate</title>
+</head>
+<body>
+    <header></header>
+    <main id="#page-crud" class="container-crud">
+        <div class="container-fluid px-15 px-md-30 d-flex flex-column h-100">
+           <div class="d-flex justify-content-between pt-lg-30">
+                <div class="d-flex gap-3">
+                    <a href="#" class="btn green" data-toggle="show" data-target="#modal-agregar">
+                        Agregar Usuario
+                        <svg width="12" height="13" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg" class="mb-little-2">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 7L4.37113e-08 7L0 6L12 6V7Z" fill="#F7F6F3"/>
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M5.5 12.5V0.5H6.5V12.5H5.5Z" fill="#F7F6F3"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="btn disabled">
+                        Filtrar
+                        <svg width="14" height="7" viewBox="0 0 14 7" fill="none" xmlns="http://www.w3.org/2000/svg" class="mb-little-2">
+                            <path d="M1 0.5H13M3 3.5H11M5 6.5H9" stroke="#776254" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                </div>
+           </div>
+           <div class="flex-fill d-flex flex-column pb-lg-20 pt-lg-30">
+                <div class="crud-box flex-fill">
+                    <div class="row pt-lg-30">
+                        <div class="col-lg-3-esp">
+                            <div class="text-center px-10">
+                                <p class="detalle">Nombre</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-2-esp">
+                            <div class="text-center">
+                                <p class="detalle">Rol</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-2-esp">
+                            <div class="text-center">
+                                <p class="detalle">Email</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-2-esp">
+                            <div class="text-center">
+                                <p class="detalle">Telefono</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-1-esp">
+                            <div class="text-center">
+                                <p class="detalle">Puntaje</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-1-esp">
+                            <div class="text-center">
+                                <p class="detalle">Nivel</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-3-esp">
+                            <div class="text-center">
+                                <p class="detalle">Acciones</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="users" class="pb-30 pt-10">
+                    </div>
+                    <div class="reticula">
+                        
+                        <div class="row h-100">
+                            <div class="col-lg-3-esp pr-0">
+                                <div class="d-flex justify-content-end h-100">
+                                    <div class="divider-reticula"></div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2-esp pr-0">
+                                <div class="d-flex justify-content-end h-100">
+                                    <div class="divider-reticula"></div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2-esp pr-0">
+                                <div class="d-flex justify-content-end h-100">
+                                    <div class="divider-reticula"></div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2-esp pr-0">
+                                <div class="d-flex justify-content-end h-100">
+                                    <div class="divider-reticula"></div>
+                                </div>
+                            </div>
+                            <div class="col-lg-1-esp pr-0">
+                                <div class="d-flex justify-content-end h-100">
+                                    <div class="divider-reticula"></div>
+                                </div>
+                            </div>
+                            <div class="col-lg-1-esp pr-0">
+                                <div class="d-flex justify-content-end h-100">
+                                    <div class="divider-reticula"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-center pb-lg-30 pt-lg-20">
+                    <a href="#" class="btn green small">
+                        Descargar Excel
+                        <svg width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2.47518 4.49998V1.49998C2.47518 1.32317 2.54542 1.1536 2.67044 1.02858C2.79547 0.903551 2.96503 0.833313 3.14185 0.833313H12.4752C12.652 0.833313 12.8216 0.903551 12.9466 1.02858C13.0716 1.1536 13.1418 1.32317 13.1418 1.49998V13.5C13.1418 13.6768 13.0716 13.8464 12.9466 13.9714C12.8216 14.0964 12.652 14.1666 12.4752 14.1666H3.14185C2.96503 14.1666 2.79547 14.0964 2.67044 13.9714C2.54542 13.8464 2.47518 13.6768 2.47518 13.5V10.5M10.1418 4.49998H11.1418M9.14185 7.16665H11.1418M9.14185 9.83331H11.1418M3.14185 6.49998L5.14185 8.49998M5.14185 6.49998L3.14185 8.49998M1.14185 4.49998H7.14185V10.5H1.14185V4.49998Z" stroke="#F7F6F3" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                </div>
+                <div class="d-flex justify-content-center">
+                    <div class="pagination">
+                        <div class="arrow-navigation disabled">
+                            <svg width="9" height="12" viewBox="0 0 9 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0 5.99999L9 0.803833V11.1961L0 5.99999Z" fill="#776254"/>
+                            </svg>
+                        </div>
+                        <div class="number current">
+                            1
+                        </div>
+                        <div class="number">
+                            2
+                        </div>
+                        <div class="number">
+                            3
+                        </div>
+                        <div class="arrow-navigation">
+                            <svg width="9" height="11" viewBox="0 0 9 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9 5.5L4.64275e-07 10.6962L9.18537e-07 0.303847L9 5.5Z" fill="#776254"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+           </div>
+        </div>
+        <div class="container-modal" id="modal-agregar">
+            <div class="toggle-modal" data-toggle="show" data-target="#modal-agregar"></div>
+            <div class="row h-100 align-items-center justify-content-center">
+                <div class="col-lg-4">
+                    <div class="modal">
+                        <div class="d-flex justify-content-between">
+                            <h2>Usuario Registro</h2>
+                            <a href="#" class="close-button" data-toggle="show" data-target="#modal-agregar">
+                                <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M0.514648 0.757355L8.99993 9.24264M8.99993 0.757355L0.514649 9.24264" stroke="#F1EFE9"/>
+                                </svg>
+                            </a>
+                        </div>
+                        <form>
+                            <div class="container-input">
+                                <input id="input-name" type="text" class="input-default" placeholder="Escribe el nombre">
+                                <select class="select-rol" name="select-input">
+                                    <option value="">Rol</option>
+                                    <option value="Distribuidor">Distribuidor</option>
+                                    <option value="Promotor">Promotor</option>
+                                    <option value="Vendedor">Vendedor</option>
+                                </select>
+                                <input id="input-email" type="text" class="input-default" placeholder="Email">
+                                <input id="input-tel" type="text" class="input-default" placeholder="Télefono">
+                            </div>
+                            <div class="d-flex justify-content-center pt-lg-45">
+                                <button class="btn white">
+                                    Agregar Usuario
+                                    <svg width="12" height="13" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M0 6.5L12 6.5M6 0.5V12.5" stroke="#776254"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-modal" id="modal-eliminar">
+            <div class="toggle-modal" data-toggle="show" data-target="#modal-eliminar"></div>
+            <div class="row h-100 align-items-center justify-content-center">
+                <div class="col-lg-4">
+                    <div class="modal">
+                        <div class="d-flex justify-content-between">
+                            <h2>Eliminar Usuario</h2>
+                            <a href="#" class="close-button" data-toggle="show" data-target="#modal-eliminar">
+                                <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M0.514648 0.757355L8.99993 9.24264M8.99993 0.757355L0.514649 9.24264" stroke="#F1EFE9"/>
+                                </svg>
+                            </a>
+                        </div>
+                        <div class="d-flex flex-column align-items-center pt-lg-40">
+                            <p class="pb-lg-30">¿Estás seguro de eliminar a este usuario?</p>
+                            <a href="#" class="btn white btn-eliminar-modal ">Eliminar Usuario</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer></footer>
+    <!-- LIBS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.15.2/js/selectize.min.js" integrity="sha512-IOebNkvA/HZjMM7MxL0NYeLYEalloZ8ckak+NDtOViP7oiYzG5vn6WVXyrJDiJPhl4yRdmNAG49iuLmhkUdVsQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- MAIN JS -->
+    <script src="./js/app.js"></script>
+</body>
+</html>

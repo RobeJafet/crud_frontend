@@ -1,0 +1,17 @@
+.navbar{
+    ul{
+        list-style: none;
+        display: flex;
+        margin: 0 -7.5px;
+
+        .nav-item{
+            .nav-link{
+                text-decoration: none;
+                padding: 0 7.5px;
+                &.active{
+                    color: $green;
+                }
+            }
+        }
+    }
+}

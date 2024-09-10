@@ -1,0 +1,100 @@
+.btn{
+    padding: 11px 15px 9px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    border-radius: 40px;
+    gap: 10px;
+    border: 1px solid $brown;
+    &.green{
+        background-color: $green;
+        color: $white;
+        border: 0;
+    }
+    &.offwhite{
+        background-color: $offwhite;
+    }
+    &.white{
+        background-color: $white;
+        color: $brown;
+        border: 0;
+    }
+    &.brown{
+        background-color: $lightbrown;
+        color: $white;
+        border: 0;
+    }
+    svg{
+        flex: none;
+    }
+    &.small{
+        padding: 5px 10px 4px;
+    }
+    &.disabled{
+        opacity: 0.5;
+        pointer-events: none;
+    }
+}
+
+.toggle-button{
+    display: block;
+    width: 25px;
+    height: 25px;
+    border-radius: 5px;
+    border: 1px solid $brown;
+    position: relative;
+    span{
+        position: absolute;
+        width: 10px;
+        height: 1px;
+        background-color: $brown;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transition: transform cubic-bezier(0.19, 1, 0.22, 1) 0.5s;
+        &:nth-child(2){
+            transform: translate(-50%, -50%) rotate(90deg);
+        }
+    }
+    &.active{
+        span{
+            &:nth-child(2){
+                transform: translate(-50%, -50%) rotate(0deg);
+            }
+        }
+    }
+}
+
+.cuad-red{
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+    right: 35px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 1px solid $brown;
+    padding: 4px 5px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    border-radius: 20px;
+    z-index: 1;
+    background-color: $offwhite;
+    transition: opacity cubic-bezier(0.19, 1, 0.22, 1) 0.5s;
+    &.show{
+        opacity: 1;
+        pointer-events: all;
+    }
+    .btn-cuad{
+        padding: 4px 10px;
+        display: flex;
+        white-space: nowrap;
+        gap: 10px;
+        text-decoration: none;
+    }
+    .divide-cuad{
+        height: 16px;
+        width: 1px;
+        background-color: $brown;
+    }
+}
