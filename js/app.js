@@ -19,7 +19,7 @@ $(document).on('click', '.toggle-button', function (event) {
   $(this).toggleClass('active')
 })
 
-localStorage.setItem('authToken', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXNzd29yZCI6Im1lZGl0ZXJydW0iLCJpYXQiOjE3MjYxMjY0ODd9.k6CChQlSetHaFygwC-9oFS_WZkkOEw7dUtuNRkSxsyM');
+localStorage.setItem('authToken', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXNzd29yZCI6Im1lZGl0ZXJydW0iLCJpYXQiOjE3MjYxNTM0Mjd9.MzbCF-toGKRj3ZRg7djuzojYQzRvNyy0L5iy4kNRxh8');
 
 var token = localStorage.getItem('authToken');
 
