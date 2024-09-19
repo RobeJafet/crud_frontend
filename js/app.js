@@ -19,7 +19,7 @@ $(document).on('click', '.toggle-button', function (event) {
   $(this).toggleClass('active')
 })
 
-localStorage.setItem('authToken', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXNzd29yZCI6Im1lZGl0ZXJydW0iLCJpYXQiOjE3MjYxNTM0Mjd9.MzbCF-toGKRj3ZRg7djuzojYQzRvNyy0L5iy4kNRxh8');
+localStorage.setItem('authToken', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXNzd29yZCI6Im1lZGl0ZXJydW0iLCJpYXQiOjE3MjY1MTM1NDF9.N3Bg3n0-E9uFKRfgbXgdsr7iaWHiA6hIz6aIe2bkmiw');
 
 var token = localStorage.getItem('authToken');
 
@@ -58,39 +58,60 @@ function consultar() {
       var html = '';
       users.forEach(user => {
         html += `
-        <div class="row pt-lg-20">
-          <div class="col-lg-3-esp">
+        <div class="row pt-20 r-gap-acciones">
+          <div class="col-4 col-md-5 offset-md-1 d-lg-none">
+              <p class="detalle pl-15 pl-md-0">Nombre</p>
+          </div>
+          <div class="col-8 col-md-5 col-lg-3-esp">
             <div class="contain-text">
               <p>${user.nombre}</p>
             </div>
           </div>
-          <div class="col-lg-2-esp">
+          <div class="col-4 col-md-5 offset-md-1 d-lg-none">
+            <p class="detalle pl-15 pl-md-0">Rol</p>
+          </div>
+          <div class="col-8 col-md-5 col-lg-2-esp">
             <div class="contain-text">
               <p>${user.rol}</p>
             </div>
           </div>
-          <div class="col-lg-2-esp">
+          <div class="col-4 col-md-5 offset-md-1 d-lg-none">
+            <p class="detalle pl-15 pl-md-0">Email</p>
+          </div>
+          <div class="col-8 col-md-5 col-lg-2-esp">
             <div class="contain-text">
               <p>${user.email}</p>
             </div>
           </div>
-          <div class="col-lg-2-esp">
-            <div class="contain-text">
+          <div class="col-4 col-md-5 offset-md-1 d-lg-none">
+            <p class="detalle pl-15 pl-md-0">Teléfono</p>
+          </div>
+          <div class="col-8 col-md-5 col-lg-2-esp">
+            <div class="contain-text ">
               <p>${user.telefono}</p>
             </div>
           </div>
-          <div class="col-lg-1-esp">
+          <div class="col-4 col-md-5 offset-md-1 d-lg-none">
+            <p class="detalle pl-15 pl-md-0">Puntos</p>
+          </div>
+          <div class="col-8 col-md-5 col-lg-1-esp">
             <div class="contain-text">
               <p>${user.puntos_total}</p>
             </div>
           </div>
-          <div class="col-lg-1-esp">
+          <div class="col-4 col-md-5 offset-md-1 d-lg-none">
+            <p class="detalle pl-15 pl-md-0">Nivel</p>
+          </div>
+          <div class="col-8 col-md-5 col-lg-1-esp">
             <div class="contain-text">
               <p>${user.nivel}</p>
             </div>
           </div>
-          <div class="col-lg-3-esp">
-            <div class="d-flex gap-3 justify-content-center">
+          <div class="col-4 col-md-5 offset-md-1 d-flex align-items-center d-lg-none">
+            <p class="detalle pl-15 pl-md-0">Acciones</p>
+          </div>
+          <div class="col-8 col-md-5 col-lg-3-esp">
+            <div class="d-flex gap-3 justify-content-lg-center">
               <a href="#" class="btn small btn-eliminar" data-id="${user.id}" data-target="#modal-eliminar" data-toggle="show">
                 Borrar
                 <svg width="14" height="9" viewBox="0 0 14 9" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -98,6 +119,9 @@ function consultar() {
                 </svg>
               </a>
             </div>
+          </div>
+          <div class="col-md-10 d-lg-none mx-auto pt-20 px-25 px-md-15">
+            <div class="pleca-h"></div>
           </div>
         </div>
         `;

@@ -13,7 +13,7 @@
     <header></header>
     <main id="#page-crud" class="container-crud">
         <div class="container-fluid px-15 px-md-30 d-flex flex-column h-100">
-           <div class="d-flex justify-content-between pt-lg-30">
+           <div class="d-flex justify-content-center justify-content-lg-between pt-20 pt-lg-30">
                 <div class="d-flex gap-3">
                     <a href="#" class="btn green" data-toggle="show" data-target="#modal-agregar">
                         Agregar Usuario
@@ -30,46 +30,51 @@
                     </a>
                 </div>
            </div>
-           <div class="flex-fill d-flex flex-column pb-lg-20 pt-lg-30">
+           <div class="flex-fill d-flex flex-column pb-20 pt-30">
                 <div class="crud-box flex-fill">
-                    <div class="row pt-lg-30">
-                        <div class="col-lg-3-esp">
-                            <div class="text-center px-10">
-                                <p class="detalle">Nombre</p>
-                            </div>
-                        </div>
-                        <div class="col-lg-2-esp">
-                            <div class="text-center">
-                                <p class="detalle">Rol</p>
-                            </div>
-                        </div>
-                        <div class="col-lg-2-esp">
-                            <div class="text-center">
-                                <p class="detalle">Email</p>
-                            </div>
-                        </div>
-                        <div class="col-lg-2-esp">
-                            <div class="text-center">
-                                <p class="detalle">Telefono</p>
-                            </div>
-                        </div>
-                        <div class="col-lg-1-esp">
-                            <div class="text-center">
-                                <p class="detalle">Puntaje</p>
-                            </div>
-                        </div>
-                        <div class="col-lg-1-esp">
-                            <div class="text-center">
-                                <p class="detalle">Nivel</p>
-                            </div>
-                        </div>
-                        <div class="col-lg-3-esp">
-                            <div class="text-center">
-                                <p class="detalle">Acciones</p>
+                    <div class="row d-none d-lg-flex">
+                        <div class="col-md-6 col-lg-12">
+                            <div class="row pt-lg-30">
+                                <div class="col-lg-3-esp">
+                                    <div class="text-center px-10">
+                                        <p class="detalle">Nombre</p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2-esp">
+                                    <div class="text-center">
+                                        <p class="detalle">Rol</p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2-esp">
+                                    <div class="text-center">
+                                        <p class="detalle">Email</p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2-esp">
+                                    <div class="text-center">
+                                        <p class="detalle">Telefono</p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-1-esp">
+                                    <div class="text-center">
+                                        <p class="detalle">Puntaje</p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-1-esp">
+                                    <div class="text-center">
+                                        <p class="detalle">Nivel</p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3-esp">
+                                    <div class="text-center">
+                                        <p class="detalle">Acciones</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div id="users" class="pb-30 pt-10">
+                    
+                    <div id="users" class="pb-lg-30 pt-10">
                     </div>
                     <div class="reticula">
                         
@@ -107,7 +112,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="d-flex justify-content-center pb-lg-30 pt-lg-20">
+                <div class="d-flex justify-content-center pb-30 pt-20">
                     <a href="#" class="btn green small disabled">
                         Descargar Excel
                         <svg width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -143,7 +148,7 @@
         <div class="container-modal" id="modal-agregar">
             <div class="toggle-modal" data-toggle="show" data-target="#modal-agregar"></div>
             <div class="row h-100 align-items-center justify-content-center">
-                <div class="col-lg-4">
+                <div class="col-10 col-lg-4">
                     <div class="modal">
                         <div class="d-flex justify-content-between">
                             <h2>Usuario Registro</h2>
@@ -165,7 +170,7 @@
                                 <input id="input-email" type="text" class="input-default" placeholder="Email">
                                 <input id="input-tel" type="text" class="input-default" placeholder="Télefono">
                             </div>
-                            <div class="d-flex justify-content-center pt-lg-45">
+                            <div class="d-flex justify-content-center pt-25 pt-lg-45">
                                 <button class="btn white">
                                     Agregar Usuario
                                     <svg width="12" height="13" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
