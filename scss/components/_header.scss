@@ -16,6 +16,10 @@ header{
         }
         @include media-breakpoint-down(md){
             justify-content: center;
+            overflow-x: scroll;
+                .nav-item {
+                white-space: nowrap;
+            }
         }
 
         .nav-item{

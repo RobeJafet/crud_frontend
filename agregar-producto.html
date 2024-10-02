@@ -30,19 +30,19 @@
                 </div>
             </div>
             <div class="col-md-7 offset-md-1 offset-lg-0 col-lg-5 pt-50 pt-md-0">
-                <form action="submit">
+                <form action="submit" id="#form-agregar-producto">
                     <div class="d-flex flex-column r-gap-30">
                         <div class="w-100">
                             <div class="d-flex gap-2 align-items-center pb-15">
                                 <div class="circle-green"></div>
                                 <p class="detalle">SKU</p>
                             </div>
-                            <input class="input-default dark" type="text" class="input"
+                            <input class="input-default dark" id="sku" type="text" class="input"
                                 placeholder="Escribe el SKU, por ejemplo: A3234SD234">
                         </div>
                         <div class="w-100">
                             <div class="d-flex gap-2 align-items-center pb-15">
-                                <div class="circle-green"></div>
+                                <div class="circle-green" id="nombre"></div>
                                 <p class="detalle">Nombre de Producto</p>
                             </div>
                             <input class="input-default dark" type="text" class="input"
@@ -53,20 +53,20 @@
                                 <div class="circle-green"></div>
                                 <p class="detalle">Precio</p>
                             </div>
-                            <input class="input-default dark" type="text" class="input"
+                            <input class="input-default dark" id="precio" type="text" class="input"
                                 placeholder="Escribe el precio del producto">
                         </div>
                         <div class="w-100">
                             <div class="d-flex gap-2 align-items-center pb-15">
                                 <p class="detalle">Descuento</p>
                             </div>
-                            <input class="input-default dark" type="text" class="input" placeholder="Porcentaje de descuento">
+                            <input class="input-default dark" type="text" class="input" id="descuento" placeholder="Porcentaje de descuento">
                         </div>
                         <div class="w-100">
                             <div class="d-flex gap-2 align-items-center pb-15">
                                 <p class="detalle">Puntos</p>
                             </div>
-                            <input class="input-default dark" type="text" class="input"
+                            <input class="input-default dark" id="puntos" type="text" class="input"
                                 placeholder="Por default se pondra el precio entre 100">
                         </div>
                         <div class="w-100">
@@ -75,7 +75,7 @@
                                 <p class="detalle">Cantidad Inventario</p>
                             </div>
                             <input class="input-default dark" type="text" class="input"
-                                placeholder="Escribe la cantidad en inventario">
+                                placeholder="Escribe la cantidad en inventario" id="cantidad">
                         </div>
                         <div class="w-100">
                             <div class="d-flex gap-2 align-items-center pb-15">
@@ -100,5 +100,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.15.2/js/selectize.min.js" integrity="sha512-IOebNkvA/HZjMM7MxL0NYeLYEalloZ8ckak+NDtOViP7oiYzG5vn6WVXyrJDiJPhl4yRdmNAG49iuLmhkUdVsQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- MAIN JS -->
     <script src="./js/app.js"></script>
+    <script src="./js/producto.js"></script>
 </body>
 </html>
