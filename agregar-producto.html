@@ -30,7 +30,7 @@
                 </div>
             </div>
             <div class="col-md-7 offset-md-1 offset-lg-0 col-lg-5 pt-50 pt-md-0">
-                <form action="submit" id="#form-agregar-producto">
+                <form action="submit" id="form-agregar-producto">
                     <div class="d-flex flex-column r-gap-30">
                         <div class="w-100">
                             <div class="d-flex gap-2 align-items-center pb-15">
@@ -42,10 +42,10 @@
                         </div>
                         <div class="w-100">
                             <div class="d-flex gap-2 align-items-center pb-15">
-                                <div class="circle-green" id="nombre"></div>
+                                <div class="circle-green"></div>
                                 <p class="detalle">Nombre de Producto</p>
                             </div>
-                            <input class="input-default dark" type="text" class="input"
+                            <input class="input-default dark" id="nombre" type="text" class="input"
                                 placeholder="Escribe el nombre del producto">
                         </div>
                         <div class="w-100">
@@ -60,7 +60,8 @@
                             <div class="d-flex gap-2 align-items-center pb-15">
                                 <p class="detalle">Descuento</p>
                             </div>
-                            <input class="input-default dark" type="text" class="input" id="descuento" placeholder="Porcentaje de descuento">
+                            <input class="input-default dark" id="descuento" type="text" class="input"  
+                                placeholder="Porcentaje de descuento">
                         </div>
                         <div class="w-100">
                             <div class="d-flex gap-2 align-items-center pb-15">
@@ -74,7 +75,7 @@
                                 <div class="circle-green"></div>
                                 <p class="detalle">Cantidad Inventario</p>
                             </div>
-                            <input class="input-default dark" type="text" class="input"
+                            <input class="input-default dark" id="cantidad" type="text" class="input"
                                 placeholder="Escribe la cantidad en inventario" id="cantidad">
                         </div>
                         <div class="w-100">
@@ -101,5 +102,6 @@
     <!-- MAIN JS -->
     <script src="./js/app.js"></script>
     <script src="./js/producto.js"></script>
+    <script src="./js/addProduct.js"></script>
 </body>
 </html>

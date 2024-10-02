@@ -10,6 +10,7 @@ $('#form-agregar-producto').on('submit', function(e) {
     var nombreProducto = $('#nombre').val();
     var precio = $('#precio').val();
     var descuento = $('#descuento').val();
+    var puntos_producto = $('#puntos').val();
     var cantidadInventario = $('#cantidad').val();
     var descripcion = $('#textarea-producto').val();
     
@@ -37,14 +38,15 @@ $('#form-agregar-producto').on('submit', function(e) {
         sku: sku,
         nombre_producto: nombreProducto,
         costo_total: precio,
+        costo_no_iva: precio * 0.84, // Se calcula el costo sin IVA
         descuento: descuento || 0, // Si no hay descuento, se envía como 0
         cantidad_inventario: cantidadInventario,
+        puntos_producto: puntos_producto,
         descripcion: descripcion || null, // Si no hay descripción, se envía como null
     };
 
-    // Hacer la solicitud AJAX
     $.ajax({
-        url: 'https://api.mediterrum.site/productos',
+        url: 'https://api.mediterrum.site/productos/',
         type: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -62,7 +64,13 @@ $('#form-agregar-producto').on('submit', function(e) {
         },
         error: function(error) {
             console.log(error);
-            alert('Ocurrió un error al agregar el producto');
+            if (error.responseJSON && error.responseJSON.mensaje) {
+                alert(error.responseJSON.mensaje);
+            } else {
+                alert('Ocurrió un error al agregar el producto');
+            }
         }
     });
+    
+
 });
