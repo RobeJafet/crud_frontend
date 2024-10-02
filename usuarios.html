@@ -28,7 +28,7 @@
                     </div>
                     <div class="col-12 col-md-4 col-lg-2 pt-20 pt-md-0">
                         <form action="submit" class="search-form" id="search-name"> 
-                            <input type="text" class="search-input" placeholder="Buscar por nombre" id="search-name-input">
+                            <input type="text" class="search-input" placeholder="Buscar por usuario" id="search-name-input">
                             <button>
                                 <svg width="12" height="13" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M11.0667 12.5L6.86667 8.3C6.53333 8.56667 6.15 8.77778 5.71667 8.93333C5.28333 9.08889 4.82222 9.16667 4.33333 9.16667C3.12222 9.16667 2.09733 8.74711 1.25867 7.908C0.42 7.06889 0.000444797 6.044 3.52734e-07 4.83333C-0.000444092 3.62267 0.419111 2.59778 1.25867 1.75867C2.09822 0.919556 3.12311 0.5 4.33333 0.5C5.54356 0.5 6.56867 0.919556 7.40867 1.75867C8.24867 2.59778 8.668 3.62267 8.66667 4.83333C8.66667 5.32222 8.58889 5.78333 8.43333 6.21667C8.27778 6.65 8.06667 7.03333 7.8 7.36667L12 11.5667L11.0667 12.5ZM4.33333 7.83333C5.16667 7.83333 5.87511 7.54178 6.45867 6.95867C7.04222 6.37556 7.33378 5.66711 7.33333 4.83333C7.33289 3.99956 7.04133 3.29133 6.45867 2.70867C5.876 2.126 5.16756 1.83422 4.33333 1.83333C3.49911 1.83244 2.79089 2.12422 2.20867 2.70867C1.62644 3.29311 1.33467 4.00133 1.33333 4.83333C1.332 5.66533 1.62378 6.37378 2.20867 6.95867C2.79356 7.54356 3.50178 7.83511 4.33333 7.83333Z" fill="#776254"/>
@@ -285,7 +285,7 @@
                     </div> 
                 </div>
                 <div class="d-flex justify-content-center pb-30 pt-20">
-                    <a href="#" class="btn green small disabled">
+                    <a href="#" class="btn green small" id="btn-excel">
                         Descargar Excel
                         <svg width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M2.47518 4.49998V1.49998C2.47518 1.32317 2.54542 1.1536 2.67044 1.02858C2.79547 0.903551 2.96503 0.833313 3.14185 0.833313H12.4752C12.652 0.833313 12.8216 0.903551 12.9466 1.02858C13.0716 1.1536 13.1418 1.32317 13.1418 1.49998V13.5C13.1418 13.6768 13.0716 13.8464 12.9466 13.9714C12.8216 14.0964 12.652 14.1666 12.4752 14.1666H3.14185C2.96503 14.1666 2.79547 14.0964 2.67044 13.9714C2.54542 13.8464 2.47518 13.6768 2.47518 13.5V10.5M10.1418 4.49998H11.1418M9.14185 7.16665H11.1418M9.14185 9.83331H11.1418M3.14185 6.49998L5.14185 8.49998M5.14185 6.49998L3.14185 8.49998M1.14185 4.49998H7.14185V10.5H1.14185V4.49998Z" stroke="#F7F6F3" stroke-linecap="round" stroke-linejoin="round"/>
@@ -312,9 +312,10 @@
                                 <input id="input-name" type="text" class="input-default" placeholder="Escribe el nombre">
                                 <select class="select-rol" name="select-input">
                                     <option value="">Rol</option>
-                                    <option value="Distribuidor">Distribuidor</option>
-                                    <option value="Promotor">Promotor</option>
-                                    <option value="Vendedor">Vendedor</option>
+                                    <option value="distribuidor">Distribuidor</option>
+                                    <option value="promotor">Promotor</option>
+                                    <option value="vendedor">Vendedor</option>
+                                    <option value="administrador">Administrador</option>
                                 </select>
                                 <input id="input-email" type="text" class="input-default" placeholder="Email">
                                 <input id="input-tel" type="text" class="input-default" placeholder="Télefono">
@@ -412,5 +413,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.15.2/js/selectize.min.js" integrity="sha512-IOebNkvA/HZjMM7MxL0NYeLYEalloZ8ckak+NDtOViP7oiYzG5vn6WVXyrJDiJPhl4yRdmNAG49iuLmhkUdVsQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- MAIN JS -->
     <script src="./js/app.js"></script>
+    <script src="./js/usuarios.js"></script>
+
 </body>
 </html>
