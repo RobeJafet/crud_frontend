@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <link rel="icon" href="./test.ico">
+    <title>Editar Producto</title>
+</head>
+<body>
+    <header></header>
+    <main id="page-agregar">
+      <div class="container-fluid px-15 px-md-30 pb-50">
+        <div class="row pt-50 justify-content-center">
+            <div class="col-12 col-md-4">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-lg-9 px-55 px-md-15 h-100">
+                        <div class="img-wrapper">
+                            <img src="./assets/gotero.jpg" alt="gotero">
+                        </div>
+                        <div class="d-flex flex-column pt-30 gap-3">
+                            <a href="#" class="btn green d-flex justify-content-center">
+                                Cambiar Foto
+                            </a>
+                            <a href="#" class="btn brown d-flex justify-content-center">
+                                Eliminar Foto
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-7 offset-md-1 offset-lg-0 col-lg-5 pt-50 pt-md-0">
+                <form action="submit">
+                    <div class="d-flex flex-column r-gap-30">
+                        <div class="w-100">
+                            <div class="d-flex gap-2 align-items-center pb-15">
+                                <div class="circle-green"></div>
+                                <p class="detalle">SKU</p>
+                            </div>
+                            <input class="input-default dark" type="text" class="input"
+                                placeholder="Escribe el SKU, por ejemplo: A3234SD234">
+                        </div>
+                        <div class="w-100">
+                            <div class="d-flex gap-2 align-items-center pb-15">
+                                <div class="circle-green"></div>
+                                <p class="detalle">Nombre de Producto</p>
+                            </div>
+                            <input class="input-default dark" type="text" class="input"
+                                placeholder="Escribe el nombre del producto">
+                        </div>
+                        <div class="w-100">
+                            <div class="d-flex gap-2 align-items-center pb-15">
+                                <div class="circle-green"></div>
+                                <p class="detalle">Precio</p>
+                            </div>
+                            <input class="input-default dark" type="text" class="input"
+                                placeholder="Escribe el precio del producto">
+                        </div>
+                        <div class="w-100">
+                            <div class="d-flex gap-2 align-items-center pb-15">
+                                <p class="detalle">Descuento</p>
+                            </div>
+                            <input class="input-default dark" type="text" class="input" placeholder="Porcentaje de descuento">
+                        </div>
+                        <div class="w-100">
+                            <div class="d-flex gap-2 align-items-center pb-15">
+                                <p class="detalle">Puntos</p>
+                            </div>
+                            <input class="input-default dark" type="text" class="input"
+                                placeholder="Por default se pondra el precio entre 100">
+                        </div>
+                        <div class="w-100">
+                            <div class="d-flex gap-2 align-items-center pb-15">
+                                <div class="circle-green"></div>
+                                <p class="detalle">Cantidad Inventario</p>
+                            </div>
+                            <input class="input-default dark" type="text" class="input"
+                                placeholder="Escribe la cantidad en inventario">
+                        </div>
+                        <div class="w-100">
+                            <div class="d-flex gap-2 align-items-center pb-15">
+                                <p class="detalle">Descripción</p>
+                            </div>
+                            <textarea name="textarea-producto" id="textarea-producto" class="textarea-producto" placeholder="Escribe una descripción"></textarea>
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <button class="btn green">Guardar Cambios</button>
+                        </div>
+                    </div>
+        
+                </form>
+            </div>
+        </div>
+      </div>
+    </main> 
+    <footer></footer>
+    <!-- LIBS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.15.2/js/selectize.min.js" integrity="sha512-IOebNkvA/HZjMM7MxL0NYeLYEalloZ8ckak+NDtOViP7oiYzG5vn6WVXyrJDiJPhl4yRdmNAG49iuLmhkUdVsQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- MAIN JS -->
+    <script src="./js/app.js"></script>
+</body>
+</html>

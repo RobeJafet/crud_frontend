@@ -31,9 +31,9 @@ body{
     -webkit-font-smoothing : antialiased;
     -moz-osx-font-smoothing: grayscale;
     color: $brown;
-    height: 100vh;
     display: flex;
     flex-direction: column;
+    min-height: 100vh;
 }
 
 a:not([href]):not([tabindex]){
@@ -48,6 +48,10 @@ a {
     }
 }
   
+ul{
+    padding-left: 0;
+}
+
 ::placeholder {
     color: $placeholder-color;
 }
@@ -86,10 +90,23 @@ input{
     border: none;
 }
 
-
-.logo{
+.logo-login{
     width: 40px;
     height: 70px;
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.logo{
+    width: 30px;
+    height: 53px;
+    @include media-breakpoint-up(lg){
+        width: 40px;
+        height: 70px;
+    }
     img{
         width: 100%;
         height: 100%;
@@ -98,6 +115,7 @@ input{
 
 .container-crud{
     flex: 1;
+    display: flex;
     .crud-box{
         background-color: $offwhite;
         width: 100%;
@@ -135,6 +153,25 @@ input{
     }
 }
 
+.divider-reticula{
+    width: 1px;
+    background-color: rgba($brown, 0.5);
+    align-self: stretch;
+    padding: 0
+}
+
+.reticula-abs{
+    position: absolute;
+    left: 0;
+    top: 30px;
+    bottom: 30px;
+    width: 100%;
+    pointer-events: none;
+    @include media-breakpoint-down(md){
+        display: none;
+    }
+}
+
 .contain-text{
     display: flex;
     justify-content: center;
@@ -148,6 +185,73 @@ input{
     }
     @include media-breakpoint-down(md){
         padding-right: 15px;
+    }
+}
+
+.invalid-fields{
+    .empty-fields{
+        color: $white;
+        display: none;
+        &.show{
+            padding-top: 50px;
+            display: flex;
+            width: 100%;
+            justify-content: center;
+        }
+    }
+    .invalid-email{
+        color: $white;
+        display: none;
+        &.show{
+            padding-top: 50px;
+            display: flex;
+            width: 100%;
+            justify-content: center;
+        }
+    }
+}
+
+.hist{
+    &:last-of-type{
+        .divider-container{
+            display: none;
+        }
+        
+    }
+}
+
+.grid-usuarios{
+    &:last-child{
+        .divider-container{
+            display: none;
+        }
+    }
+}
+
+.menu-drop{
+    background-color: $offwhite;
+    border-radius: 20px;
+    border: 1px solid $brown;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    gap: 5px;
+    position: absolute;
+    right: calc(100% + 5px);
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 5px 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity cubic-bezier(0.19, 1, 0.22, 1) 0.5s;
+    .link-drop{
+        display: flex;
+        gap: 10px;
+        color: $brown;
+        padding: 5px 15px;
+        border-radius: 20px;
+        white-space: nowrap;
+        text-decoration: none;
     }
 }
 
@@ -174,6 +278,18 @@ input{
             pointer-events: none;
         }
     }
+}
+
+.link-disabled{
+    text-decoration: none;
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+.container-desc{
+    background-color: #F1EFE9;
+    border-radius: 30px;
+    padding: 30px 10px;
 }
 
 .container-modal{
@@ -216,4 +332,168 @@ input{
             justify-content: center;
         }
     }
+}
+
+.close-button{
+    width: 30px;
+    height: 30px;
+    border: 1px solid $white;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container-personas{
+    background-color: $offwhite;
+    padding: 28px 0 50px;
+    color: $brown;
+    border-radius: 120px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    &.green{
+        background-color: $green;
+        color: $white;
+    }
+    &.brown{
+        background-color: $lightbrown;
+        color: $white;
+    }
+}
+
+.venta-row{
+    &:last-child{
+        .divider-container{
+            display: none;
+        }
+    }
+}
+
+
+.grid-usuarios{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    @include media-breakpoint-up(lg){
+        display: grid;
+        align-items: center;
+        grid-template-columns: repeat(20, 1fr);
+        column-gap: 10px;
+    }
+    .usuario-3{
+        @include media-breakpoint-up(lg){
+            grid-column: span 3;
+        }
+    }
+
+    .usuario-2{
+        @include media-breakpoint-up(lg){
+            grid-column: span 2;
+        }
+    }
+
+    .usuario-4{
+        @include media-breakpoint-up(lg){
+            grid-column: span 4;
+        }
+    }
+}
+
+.container-carrito{
+    position: fixed;
+    overflow: hidden;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    pointer-events: none;
+    .toggle-carrito{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba($black, 0.5);
+        pointer-events: none;
+        opacity: 0;
+        transition: opacity cubic-bezier(0.19, 1, 0.22, 1) 0.5s;
+    }
+    .modal-carrito{
+        pointer-events: all;
+        color: $white;
+        transition: transform cubic-bezier(0.19, 1, 0.22, 1) 0.9s;
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100%;
+        z-index: 100;
+        background-color: $lightbrown;
+        border-radius: 30px 0 0 30px;
+        display: flex;
+        flex-direction: column;
+        width: calc(100% - 20px);
+        padding: 30px 20px 30px;
+        transform: translateX(100%);
+        @include media-breakpoint-up(md){
+            width: 60%;
+        }
+        @include media-breakpoint-up(lg){
+            padding: 50px 30px 30px;
+            width: 32.5%;
+        }
+    }
+    &.show{
+        pointer-events: all;
+        .toggle-carrito{
+            pointer-events: all;
+            opacity: 1;
+        }
+        .modal-carrito{
+            transform: translateX(0);
+        }
+    }
+}
+
+
+.container-white{
+    background-color: $offwhite;
+    color: $lightbrown;
+    height: 100%;
+    padding: 20px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.box-quantity{
+    padding: 0 5px;
+    width: 80px;
+    height: 28px;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: $white;
+    margin-top: auto;
+    input{
+        min-width: 0;
+        text-align: center;
+        pointer-events: none;
+    }
+}
+
+.trash-button{
+    width: 24px;
+    height: 24px;
+    border-radius: 24px;
+    background-color: $white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.overflow-prod{
+    overflow-y: auto;
+    overflow-x: hidden;
 }

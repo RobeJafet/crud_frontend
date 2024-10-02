@@ -11,8 +11,8 @@
 </head>
 <body>
     <header></header>
-    <main id="#page-crud" class="container-crud">
-        <div class="container-fluid px-15 px-md-30 d-flex flex-column h-100">
+    <main id="page-crud" class="container-crud">
+        <div class="container-fluid px-15 px-lg-30 d-flex flex-column h-100">
            <div class="d-flex justify-content-center justify-content-lg-between pt-20 pt-lg-30">
                 <div class="d-flex gap-3">
                     <a href="#" class="btn green" data-toggle="show" data-target="#modal-agregar">
@@ -32,40 +32,40 @@
            </div>
            <div class="flex-fill d-flex flex-column pb-20 pt-30">
                 <div class="crud-box flex-fill">
-                    <div class="row d-none d-lg-flex">
+                    <div class="row d-none d-lg-flex r-gap-acciones">
                         <div class="col-md-6 col-lg-12">
                             <div class="row pt-lg-30">
-                                <div class="col-lg-3-esp">
+                                <div class="col-lg-3-esp px-7p5">
                                     <div class="text-center px-10">
                                         <p class="detalle">Nombre</p>
                                     </div>
                                 </div>
-                                <div class="col-lg-2-esp">
+                                <div class="col-lg-2-esp px-7p5">
                                     <div class="text-center">
                                         <p class="detalle">Rol</p>
                                     </div>
                                 </div>
-                                <div class="col-lg-2-esp">
+                                <div class="col-lg-2-esp px-7p5">
                                     <div class="text-center">
                                         <p class="detalle">Email</p>
                                     </div>
                                 </div>
-                                <div class="col-lg-2-esp">
+                                <div class="col-lg-2-esp px-7p5">
                                     <div class="text-center">
                                         <p class="detalle">Telefono</p>
                                     </div>
                                 </div>
-                                <div class="col-lg-1-esp">
+                                <div class="col-lg-1-esp px-7p5">
                                     <div class="text-center">
                                         <p class="detalle">Puntaje</p>
                                     </div>
                                 </div>
-                                <div class="col-lg-1-esp">
+                                <div class="col-lg-1-esp px-7p5">
                                     <div class="text-center">
                                         <p class="detalle">Nivel</p>
                                     </div>
                                 </div>
-                                <div class="col-lg-3-esp">
+                                <div class="col-lg-3-esp px-7p5">
                                     <div class="text-center">
                                         <p class="detalle">Acciones</p>
                                     </div>
@@ -78,33 +78,33 @@
                     </div>
                     <div class="reticula">
                         
-                        <div class="row h-100">
-                            <div class="col-lg-3-esp pr-0">
+                        <div class="row h-100 r-gap-acciones">
+                            <div class="col-lg-3-esp pr-0 pl-7p5">
                                 <div class="d-flex justify-content-end h-100">
                                     <div class="divider-reticula"></div>
                                 </div>
                             </div>
-                            <div class="col-lg-2-esp pr-0">
+                            <div class="col-lg-2-esp pr-0 pl-7p5">
                                 <div class="d-flex justify-content-end h-100">
                                     <div class="divider-reticula"></div>
                                 </div>
                             </div>
-                            <div class="col-lg-2-esp pr-0">
+                            <div class="col-lg-2-esp pr-0 pl-7p5">
                                 <div class="d-flex justify-content-end h-100">
                                     <div class="divider-reticula"></div>
                                 </div>
                             </div>
-                            <div class="col-lg-2-esp pr-0">
+                            <div class="col-lg-2-esp pr-0 pl-7p5">
                                 <div class="d-flex justify-content-end h-100">
                                     <div class="divider-reticula"></div>
                                 </div>
                             </div>
-                            <div class="col-lg-1-esp pr-0">
+                            <div class="col-lg-1-esp pr-0 pl-7p5">
                                 <div class="d-flex justify-content-end h-100">
                                     <div class="divider-reticula"></div>
                                 </div>
                             </div>
-                            <div class="col-lg-1-esp pr-0">
+                            <div class="col-lg-1-esp pr-0 pl-7p5">
                                 <div class="d-flex justify-content-end h-100">
                                     <div class="divider-reticula"></div>
                                 </div>
@@ -148,7 +148,7 @@
         <div class="container-modal" id="modal-agregar">
             <div class="toggle-modal" data-toggle="show" data-target="#modal-agregar"></div>
             <div class="row h-100 align-items-center justify-content-center">
-                <div class="col-10 col-lg-4">
+                <div class="col-10 col-md-7 col-lg-4">
                     <div class="modal">
                         <div class="d-flex justify-content-between">
                             <h2>Usuario Registro</h2>
@@ -158,7 +158,7 @@
                                 </svg>
                             </a>
                         </div>
-                        <form>
+                        <form id="form-agregar">
                             <div class="container-input">
                                 <input id="input-name" type="text" class="input-default" placeholder="Escribe el nombre">
                                 <select class="select-rol" name="select-input">
@@ -169,6 +169,10 @@
                                 </select>
                                 <input id="input-email" type="text" class="input-default" placeholder="Email">
                                 <input id="input-tel" type="text" class="input-default" placeholder="Télefono">
+                            </div>
+                            <div class="invalid-fields">
+                                <p class="empty-fields">Debes agregar todos los campos del usuario</p>
+                                <p class="invalid-email">Por favor introduce un email válido</p>
                             </div>
                             <div class="d-flex justify-content-center pt-25 pt-lg-45">
                                 <button class="btn white">
@@ -186,24 +190,68 @@
         <div class="container-modal" id="modal-eliminar">
             <div class="toggle-modal" data-toggle="show" data-target="#modal-eliminar"></div>
             <div class="row h-100 align-items-center justify-content-center">
-                <div class="col-lg-4">
+                <div class="col-10 col-lg-4">
                     <div class="modal">
                         <div class="d-flex justify-content-between">
-                            <h2>Eliminar Usuario</h2>
+                            <h2>Borrar</h2>
                             <a href="#" class="close-button" data-toggle="show" data-target="#modal-eliminar">
                                 <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M0.514648 0.757355L8.99993 9.24264M8.99993 0.757355L0.514649 9.24264" stroke="#F1EFE9"/>
                                 </svg>
                             </a>
                         </div>
-                        <div class="d-flex flex-column align-items-center pt-lg-40">
-                            <p class="pb-lg-30">¿Estás seguro de eliminar a este usuario?</p>
-                            <a href="#" class="btn white btn-eliminar-modal ">Eliminar Usuario</a>
+                        <div class="d-flex flex-column align-items-center pt-lg-30">
+                            <p class="pb-lg-50">¿Estas seguro que quieres eliminar este usuario?</p>
+                            <a href="#" class="btn white btn-eliminar-modal ">
+                                Borrar Usuario
+                                <svg width="15" height="9" viewBox="0 0 15 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6.57696 2.96154L9.65388 6.03846M9.65388 2.96154L6.57696 6.03846M4.42311 0.5L1.34619 4.5L4.42311 8.5H13.6539V0.5H4.42311Z" stroke="#776254" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <div class="container-modal" id="modal-editar">
+            <div class="toggle-modal" data-toggle="show" data-target="#modal-editar"></div>
+            <div class="row h-100 align-items-center justify-content-center">
+                <div class="col-10 col-lg-4">
+                    <div class="modal">
+                        <div class="d-flex justify-content-between">
+                            <h2>Edición</h2>
+                            <a href="#" class="close-button" data-toggle="show" data-target="#modal-editar">
+                                <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M0.514648 0.757355L8.99993 9.24264M8.99993 0.757355L0.514649 9.24264" stroke="#F1EFE9"/>
+                                </svg>
+                            </a>
+                        </div>
+                        <form id="form-editar">
+                            <div class="container-input">
+                                <input id="input-name-edit" type="text" class="input-default" placeholder="Escribe el nombre">
+                                <select class="select-rol" name="select-input-edit">
+                                    <option value="">Rol</option>
+                                    <option value="Distribuidor">Distribuidor</option>
+                                    <option value="Promotor">Promotor</option>
+                                    <option value="Vendedor">Vendedor</option>
+                                </select>
+                                <input id="input-email-edit" type="text" class="input-default" placeholder="Email">
+                                <input id="input-tel-edit" type="text" class="input-default" placeholder="Télefono">
+                            </div>
+                            <div class="d-flex justify-content-center pt-25 pt-lg-45">
+                                <button class="btn white">
+                                    Editar Usuario
+                                    <svg width="12" height="11" viewBox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M7.80206 1.84283L9.65717 3.69794M1.61837 8.02652L1 10.5L3.47348 9.88163L10.6379 2.71721C10.8698 2.48528 11 2.17077 11 1.84283C11 1.51489 10.8698 1.20038 10.6379 0.96846L10.5315 0.8621C10.2996 0.630248 9.9851 0.5 9.65717 0.5C9.32923 0.5 9.01471 0.630248 8.78279 0.8621L1.61837 8.02652Z" stroke="#776254" stroke-width="0.618369" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+      
     </main>
     <footer></footer>
     <!-- LIBS -->

@@ -1,5 +1,5 @@
 <div class="container-fluid px-15 px-md-30">
-    <div class="d-flex justify-content-between align-items-center pt-10 pt-lg-30">
+    <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center pt-20 pt-lg-30">
         <div class="d-flex align-items-center gap-20">
             <div class="logo">
                 <img src="./assets/logoMediterrum.jpg" alt="Logo">
@@ -9,15 +9,10 @@
                 <p class="detalle pt-10">Administrador</p>
             </div>  
         </div>
-       
-        
-        <nav class="navbar d-none">
+        <nav class="navbar">
             <ul>
                 <li class="nav-item">
                     <a href="#" class="nav-link active">Usuarios</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">Inventario</a>
                 </li>
                 <li class="nav-item">
                     <a href="#" class="nav-link">Clientes</a>
@@ -25,7 +20,153 @@
                 <li class="nav-item">
                     <a href="#" class="nav-link">Ventas</a>
                 </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link d-flex gap-2" data-toggle="show" data-target=".container-carrito">
+                        <svg width="12" height="13" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0.73877 0.200001C0.606161 0.200001 0.478984 0.252679 0.385216 0.346447C0.291448 0.440216 0.23877 0.567393 0.23877 0.700001C0.23877 0.832609 0.291448 0.959786 0.385216 1.05355C0.478984 1.14732 0.606161 1.2 0.73877 1.2H0.98477C1.09334 1.20019 1.1989 1.23571 1.2855 1.3012C1.37209 1.36669 1.43502 1.45858 1.46477 1.563L3.05077 7.113C3.14047 7.42621 3.32971 7.70169 3.58987 7.8978C3.85003 8.09392 4.16697 8.2 4.49277 8.2H9.06177C9.36162 8.20005 9.6546 8.11024 9.9029 7.94215C10.1512 7.77406 10.3434 7.53541 10.4548 7.257L11.9288 3.571C11.9894 3.41933 12.0119 3.25512 11.9944 3.09273C11.9768 2.93034 11.9198 2.77472 11.8283 2.63946C11.7367 2.5042 11.6134 2.39343 11.4692 2.31682C11.3249 2.24021 11.1641 2.2001 11.0008 2.2H2.68677L2.42577 1.288C2.3363 0.974774 2.14729 0.699187 1.88731 0.502897C1.62733 0.306608 1.31053 0.200285 0.98477 0.200001H0.73877ZM4.01277 6.837L2.97277 3.2H11.0008L9.52577 6.886C9.48862 6.97869 9.42458 7.05813 9.34188 7.11409C9.25918 7.17006 9.16162 7.19998 9.06177 7.2H4.49277C4.3842 7.19981 4.27864 7.16429 4.19204 7.0988C4.10545 7.03331 4.04252 6.94142 4.01277 6.837ZM4.73877 12.2C4.93575 12.2 5.13081 12.1612 5.31279 12.0858C5.49478 12.0104 5.66014 11.8999 5.79943 11.7607C5.93872 11.6214 6.04921 11.456 6.12459 11.274C6.19997 11.092 6.23877 10.897 6.23877 10.7C6.23877 10.503 6.19997 10.308 6.12459 10.126C6.04921 9.94399 5.93872 9.77863 5.79943 9.63934C5.66014 9.50005 5.49478 9.38956 5.31279 9.31418C5.13081 9.2388 4.93575 9.2 4.73877 9.2C4.34094 9.2 3.95941 9.35804 3.67811 9.63934C3.3968 9.92064 3.23877 10.3022 3.23877 10.7C3.23877 11.0978 3.3968 11.4794 3.67811 11.7607C3.95941 12.042 4.34094 12.2 4.73877 12.2ZM4.73877 11.2C4.60616 11.2 4.47898 11.1473 4.38522 11.0536C4.29145 10.9598 4.23877 10.8326 4.23877 10.7C4.23877 10.5674 4.29145 10.4402 4.38522 10.3464C4.47898 10.2527 4.60616 10.2 4.73877 10.2C4.87138 10.2 4.99855 10.2527 5.09232 10.3464C5.18609 10.4402 5.23877 10.5674 5.23877 10.7C5.23877 10.8326 5.18609 10.9598 5.09232 11.0536C4.99855 11.1473 4.87138 11.2 4.73877 11.2ZM8.73877 12.2C8.93575 12.2 9.13081 12.1612 9.31279 12.0858C9.49478 12.0104 9.66014 11.8999 9.79943 11.7607C9.93872 11.6214 10.0492 11.456 10.1246 11.274C10.2 11.092 10.2388 10.897 10.2388 10.7C10.2388 10.503 10.2 10.308 10.1246 10.126C10.0492 9.94399 9.93872 9.77863 9.79943 9.63934C9.66014 9.50005 9.49478 9.38956 9.31279 9.31418C9.13081 9.2388 8.93575 9.2 8.73877 9.2C8.34095 9.2 7.95941 9.35804 7.67811 9.63934C7.3968 9.92064 7.23877 10.3022 7.23877 10.7C7.23877 11.0978 7.3968 11.4794 7.67811 11.7607C7.95941 12.042 8.34095 12.2 8.73877 12.2ZM8.73877 11.2C8.60616 11.2 8.47898 11.1473 8.38522 11.0536C8.29145 10.9598 8.23877 10.8326 8.23877 10.7C8.23877 10.5674 8.29145 10.4402 8.38522 10.3464C8.47898 10.2527 8.60616 10.2 8.73877 10.2C8.87138 10.2 8.99856 10.2527 9.09232 10.3464C9.18609 10.4402 9.23877 10.5674 9.23877 10.7C9.23877 10.8326 9.18609 10.9598 9.09232 11.0536C8.99856 11.1473 8.87138 11.2 8.73877 11.2Z" fill="#776254"/>
+                        </svg>
+                        Carrito
+                    </a>
+                </li>
             </ul>
         </nav>
+    </div>
+</div>
+
+<div class="container-carrito">
+    <div class="toggle-carrito" data-toggle="show" data-target=".container-carrito"></div>
+    <div class="modal-carrito">
+        <div class="d-flex justify-content-between">
+            <h2>Carrito</h2>
+            <a href="#" class="close-button" data-toggle="show" data-target=".container-carrito">
+                <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0.514648 0.757355L8.99993 9.24264M8.99993 0.757355L0.514649 9.24264" stroke="#F1EFE9"/>
+                </svg>
+            </a>
+        </div>
+        <div class="mt-15 mb-30 overflow-prod">
+            <div class="row pt-15">
+                <div class="col-4 d-none d-md-block">
+                    <div class="img-wrapper">
+                        <img src="./assets/gotero.jpg" alt="">
+                    </div>
+                </div>
+                <div class="col-12 col-md-8">
+                    <div class="container-white">
+                        <p>Mediterrum Sistema inmunológico</p>
+                        <div class="d-flex gap-3 pt-15">
+                            <p>$1099.00</p>
+                            <p class="discount">
+                                $1299.00
+                            </p>
+                        </div>
+                        <div class="d-flex justify-content-between mt-auto pt-15">
+                            <div class="box-quantity">
+                                <a href="#" class="plus-sym">
+                                    <svg width="8" height="6" viewBox="0 0 8 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M4 6L7.4641 9.53674e-07L0.535898 9.53674e-07L4 6Z" fill="#B6A996"/>
+                                    </svg>
+                                </a>
+                                <input type="text" value="1">
+                                <a href="#" class="minus-sym">
+                                    <svg width="8" height="6" viewBox="0 0 8 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M4 0L7.4641 6L0.535898 6L4 0Z" fill="#B6A996"/>
+                                    </svg>
+                                </a>
+                            </div>
+                            <a href="#" class="trash-button">
+                                <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9 1.5C9.13261 1.5 9.25979 1.55268 9.35355 1.64645C9.44732 1.74021 9.5 1.86739 9.5 2C9.5 2.13261 9.44732 2.25979 9.35355 2.35355C9.25979 2.44732 9.13261 2.5 9 2.5H8.5L8.4985 2.5355L8.032 9.071C8.01404 9.32329 7.90115 9.55941 7.71606 9.73179C7.53097 9.90417 7.28743 10 7.0345 10H2.965C2.71207 10 2.46853 9.90417 2.28344 9.73179C2.09835 9.55941 1.98546 9.32329 1.9675 9.071L1.501 2.536L1.5 2.5H1C0.867392 2.5 0.740215 2.44732 0.646447 2.35355C0.552678 2.25979 0.5 2.13261 0.5 2C0.5 1.86739 0.552678 1.74021 0.646447 1.64645C0.740215 1.55268 0.867392 1.5 1 1.5H9ZM6 0C6.13261 0 6.25979 0.0526784 6.35355 0.146447C6.44732 0.240215 6.5 0.367392 6.5 0.5C6.5 0.632608 6.44732 0.759785 6.35355 0.853553C6.25979 0.947322 6.13261 1 6 1H4C3.86739 1 3.74021 0.947322 3.64645 0.853553C3.55268 0.759785 3.5 0.632608 3.5 0.5C3.5 0.367392 3.55268 0.240215 3.64645 0.146447C3.74021 0.0526784 3.86739 0 4 0H6Z" fill="#B6A996"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row pt-15">
+                <div class="col-4 d-none d-md-block">
+                    <div class="img-wrapper">
+                        <img src="./assets/gotero.jpg" alt="">
+                    </div>
+                </div>
+                <div class="col-12 col-md-8">
+                    <div class="container-white">
+                        <p>Mediterrum Sistema inmunológico</p>
+                        <div class="d-flex gap-3 pt-15">
+                            <p>$1099.00</p>
+                            <p class="discount">
+                                $1299.00
+                            </p>
+                        </div>
+                        <div class="d-flex justify-content-between mt-auto pt-15">
+                            <div class="box-quantity">
+                                <a href="#" class="plus-sym">
+                                    <svg width="8" height="6" viewBox="0 0 8 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M4 6L7.4641 9.53674e-07L0.535898 9.53674e-07L4 6Z" fill="#B6A996"/>
+                                    </svg>
+                                </a>
+                                <input type="text" value="1">
+                                <a href="#" class="minus-sym">
+                                    <svg width="8" height="6" viewBox="0 0 8 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M4 0L7.4641 6L0.535898 6L4 0Z" fill="#B6A996"/>
+                                    </svg>
+                                </a>
+                            </div>
+                            <a href="#" class="trash-button">
+                                <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9 1.5C9.13261 1.5 9.25979 1.55268 9.35355 1.64645C9.44732 1.74021 9.5 1.86739 9.5 2C9.5 2.13261 9.44732 2.25979 9.35355 2.35355C9.25979 2.44732 9.13261 2.5 9 2.5H8.5L8.4985 2.5355L8.032 9.071C8.01404 9.32329 7.90115 9.55941 7.71606 9.73179C7.53097 9.90417 7.28743 10 7.0345 10H2.965C2.71207 10 2.46853 9.90417 2.28344 9.73179C2.09835 9.55941 1.98546 9.32329 1.9675 9.071L1.501 2.536L1.5 2.5H1C0.867392 2.5 0.740215 2.44732 0.646447 2.35355C0.552678 2.25979 0.5 2.13261 0.5 2C0.5 1.86739 0.552678 1.74021 0.646447 1.64645C0.740215 1.55268 0.867392 1.5 1 1.5H9ZM6 0C6.13261 0 6.25979 0.0526784 6.35355 0.146447C6.44732 0.240215 6.5 0.367392 6.5 0.5C6.5 0.632608 6.44732 0.759785 6.35355 0.853553C6.25979 0.947322 6.13261 1 6 1H4C3.86739 1 3.74021 0.947322 3.64645 0.853553C3.55268 0.759785 3.5 0.632608 3.5 0.5C3.5 0.367392 3.55268 0.240215 3.64645 0.146447C3.74021 0.0526784 3.86739 0 4 0H6Z" fill="#B6A996"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row pt-15">
+                <div class="col-4 d-none d-md-block">
+                    <div class="img-wrapper">
+                        <img src="./assets/gotero.jpg" alt="">
+                    </div>
+                </div>
+                <div class="col-12 col-md-8">
+                    <div class="container-white">
+                        <p>Mediterrum Sistema inmunológico</p>
+                        <div class="d-flex gap-3 pt-15">
+                            <p>$1099.00</p>
+                            <p class="discount">
+                                $1299.00
+                            </p>
+                        </div>
+                        <div class="d-flex justify-content-between mt-auto pt-15">
+                            <div class="box-quantity">
+                                <a href="#" class="plus-sym">
+                                    <svg width="8" height="6" viewBox="0 0 8 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M4 6L7.4641 9.53674e-07L0.535898 9.53674e-07L4 6Z" fill="#B6A996"/>
+                                    </svg>
+                                </a>
+                                <input type="text" value="1">
+                                <a href="#" class="minus-sym">
+                                    <svg width="8" height="6" viewBox="0 0 8 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M4 0L7.4641 6L0.535898 6L4 0Z" fill="#B6A996"/>
+                                    </svg>
+                                </a>
+                            </div>
+                            <a href="#" class="trash-button">
+                                <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9 1.5C9.13261 1.5 9.25979 1.55268 9.35355 1.64645C9.44732 1.74021 9.5 1.86739 9.5 2C9.5 2.13261 9.44732 2.25979 9.35355 2.35355C9.25979 2.44732 9.13261 2.5 9 2.5H8.5L8.4985 2.5355L8.032 9.071C8.01404 9.32329 7.90115 9.55941 7.71606 9.73179C7.53097 9.90417 7.28743 10 7.0345 10H2.965C2.71207 10 2.46853 9.90417 2.28344 9.73179C2.09835 9.55941 1.98546 9.32329 1.9675 9.071L1.501 2.536L1.5 2.5H1C0.867392 2.5 0.740215 2.44732 0.646447 2.35355C0.552678 2.25979 0.5 2.13261 0.5 2C0.5 1.86739 0.552678 1.74021 0.646447 1.64645C0.740215 1.55268 0.867392 1.5 1 1.5H9ZM6 0C6.13261 0 6.25979 0.0526784 6.35355 0.146447C6.44732 0.240215 6.5 0.367392 6.5 0.5C6.5 0.632608 6.44732 0.759785 6.35355 0.853553C6.25979 0.947322 6.13261 1 6 1H4C3.86739 1 3.74021 0.947322 3.64645 0.853553C3.55268 0.759785 3.5 0.632608 3.5 0.5C3.5 0.367392 3.55268 0.240215 3.64645 0.146447C3.74021 0.0526784 3.86739 0 4 0H6Z" fill="#B6A996"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="d-flex justify-content-center mt-auto">
+            <h2 class="c-white pb-20">Total: $5342.00</h2>
+        </div>
+        <div class="pleca-w"></div>
+        <a href="#" class="btn green justify-content-center mt-30">
+            Proceder a compra
+        </a>
+        <p class="c-white text-center mt-20">Gastos de envío e impuestos ya incluidos al momento de agregar a carrito</p>
     </div>
 </div>

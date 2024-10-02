@@ -6,6 +6,13 @@
     &::placeholder{
         color: rgba($white, 0.5) ;
     }
+    &.dark{
+        border-bottom: 1px solid $brown;
+        color: $brown;
+        &::placeholder{
+            color: rgba($brown, 0.5) ;
+        }
+    }
 }
 
 .container-input{
@@ -43,10 +50,23 @@
                 }
             }
         }
-        
-        
     }
-    
+}
+
+.textarea-producto{
+    width: 100%;
+    height: 93px;
+    border: 0;
+    resize: none;
+    border-bottom: 1px solid $brown;
+    color: $brown;
+    background-color: transparent;
+    &::placeholder{
+        color: rgba($brown, 0.5) ;
+    }
+    &:focus{
+        outline: none;
+    }
 }
 
 .selectize-dropdown{
@@ -77,5 +97,30 @@
         &::placeholder{
             color: rgba($white, 0.5) ;
         }
+    }
+}
+
+.search-form{
+    height: 36px;
+    border: 1px solid $brown;
+    border-radius: 40px;
+    width: 100%;
+    display: flex;
+    padding: 0 15px;
+
+    .search-input{
+        height: 100%;
+        padding: 0;
+        flex: 1;
+        color: $brown;
+        &::placeholder{
+            color: rgba($brown, 0.5);
+        }
+    }
+    button{
+        background-color: transparent;
+        display: flex;
+        align-items: center;
+        padding: 0;
     }
 }

@@ -24,6 +24,17 @@
         color: $white;
         border: 0;
     }
+
+    &.dark-brown{
+        background-color: $brown;
+        color: $white;
+        border: 0;
+    }
+    &.under-white{
+        border: 1px solid $white;
+        background-color: transparent;
+        color: $white;
+    }
     svg{
         flex: none;
     }
@@ -33,6 +44,11 @@
     &.disabled{
         opacity: 0.5;
         pointer-events: none;
+    }
+    &.abs{
+        position: absolute;
+        top: 15px;
+        right: 15px;
     }
 }
 
@@ -56,12 +72,20 @@
             transform: translate(-50%, -50%) rotate(90deg);
         }
     }
-    &.active{
+   
+}
+
+.active{
+    .toggle-button{
         span{
             &:nth-child(2){
                 transform: translate(-50%, -50%) rotate(0deg);
             }
         }
+    }
+    .menu-drop{
+        opacity: 1;
+        pointer-events: all;
     }
 }
 
@@ -98,3 +122,6 @@
         background-color: $brown;
     }
 }
+
+
+
