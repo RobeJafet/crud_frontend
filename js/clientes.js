@@ -4,7 +4,6 @@ function consultar() {
       type: 'GET',
       success: function (result) {
         var clientes = result;
-        console.log(clientes);
         var html = '';
         clientes[0].forEach(cliente => {
             html += `
@@ -125,8 +124,7 @@ function consultar() {
                     <div class="divider"></div>
                 </div>
             </div>
-        </div>
-            `;
+        </div>`;
         });
         $('#clientes').html(html);
       },

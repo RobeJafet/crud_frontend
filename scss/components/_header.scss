@@ -16,7 +16,8 @@ header{
         }
         @include media-breakpoint-down(md){
             justify-content: center;
-            overflow-x: scroll;
+            overflow-x: auto;
+            overflow-y: hidden;
                 .nav-item {
                 white-space: nowrap;
             }
@@ -27,7 +28,13 @@ header{
                 text-decoration: none;
                 padding: 0 15px;
                 &.active{
+                    pointer-events: none;
                     color: $green;
+                }
+                &:hover{
+                    @include media-breakpoint-up(lg){
+                        color: $green;
+                    }
                 }
             }
         }
