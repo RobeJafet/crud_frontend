@@ -13,6 +13,7 @@ $('#form-agregar-producto').on('submit', function(e) {
     var puntos_producto = $('#puntos').val();
     var cantidadInventario = $('#cantidad').val();
     var descripcion = $('#textarea-producto').val();
+    var imageFile = $('#image')[0].files[0]; // Get the image file
     
     // Validación de campos vacíos
     if (!sku || !nombreProducto || !precio || !cantidadInventario) {
@@ -45,13 +46,21 @@ $('#form-agregar-producto').on('submit', function(e) {
         descripcion: descripcion || null, // Si no hay descripción, se envía como null
     };
 
+    // Crear un FormData object
+    var formData = new FormData();
+    formData.append('producto', JSON.stringify(productoData)); 
+    formData.append('image', imageFile); 
+
+    // formData.forEach((value, key) => {
+    //     console.log(key, value);
+    // });
+    
     $.ajax({
         url: 'https://api.mediterrum.site/productos/',
         type: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        data: JSON.stringify(productoData),
+        processData: false, // Important: tell jQuery not to process the data
+        contentType: false, // Important: tell jQuery not to set contentType
+        data: formData,
         success: function(response) {
             alert('Producto agregado correctamente');
             // Limpiar los campos del formulario después de enviar
@@ -61,6 +70,7 @@ $('#form-agregar-producto').on('submit', function(e) {
             $('#descuento').val('');
             $('#cantidad').val('');
             $('#textarea-producto').val('');
+            $('#image').val(''); // Clear the file input
         },
         error: function(error) {
             console.log(error);
