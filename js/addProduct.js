@@ -1,7 +1,3 @@
-function addProduct() {
-console.log("addProduct.js");
-}
-
 $('#form-agregar-producto').on('submit', function(e) {
     e.preventDefault();
     
@@ -13,8 +9,8 @@ $('#form-agregar-producto').on('submit', function(e) {
     var puntos_producto = $('#puntos').val();
     var cantidadInventario = $('#cantidad').val();
     var descripcion = $('#textarea-producto').val();
-    var imageFile = $('#image')[0].files[0]; // Get the image file
-    
+    var imageFile = $('#image-btn')[0].files[0].name; 
+
     // Validación de campos vacíos
     if (!sku || !nombreProducto || !precio || !cantidadInventario) {
         alert('Por favor, complete todos los campos obligatorios.');
@@ -43,24 +39,18 @@ $('#form-agregar-producto').on('submit', function(e) {
         descuento: descuento || 0, // Si no hay descuento, se envía como 0
         cantidad_inventario: cantidadInventario,
         puntos_producto: puntos_producto,
+        img:  imageFile,
         descripcion: descripcion || null, // Si no hay descripción, se envía como null
     };
 
-    // Crear un FormData object
-    var formData = new FormData();
-    formData.append('producto', JSON.stringify(productoData)); 
-    formData.append('image', imageFile); 
+    console.log(productoData);
 
-    // formData.forEach((value, key) => {
-    //     console.log(key, value);
-    // });
-    
+    // Enviar los datos a la API
     $.ajax({
         url: 'https://api.mediterrum.site/productos/',
         type: 'POST',
-        processData: false, // Important: tell jQuery not to process the data
-        contentType: false, // Important: tell jQuery not to set contentType
-        data: formData,
+        contentType: 'application/json',
+        data: JSON.stringify(productoData),
         success: function(response) {
             alert('Producto agregado correctamente');
             // Limpiar los campos del formulario después de enviar
@@ -70,7 +60,7 @@ $('#form-agregar-producto').on('submit', function(e) {
             $('#descuento').val('');
             $('#cantidad').val('');
             $('#textarea-producto').val('');
-            $('#image').val(''); // Clear the file input
+            $('#image-btn').val(''); // Asegúrate de limpiar el campo de imagen
         },
         error: function(error) {
             console.log(error);
@@ -81,6 +71,32 @@ $('#form-agregar-producto').on('submit', function(e) {
             }
         }
     });
-    
-
 });
+
+
+$('#image-btn').on('change', function(e) {
+    var file = e.target.files[0];
+
+    if (file) {
+        // Mostrar el nombre del archivo
+        $('#file-chosen').text(file.name);
+
+        // Cargar y mostrar la vista previa de la imagen
+        var reader = new FileReader();
+        reader.onload = function(e) {
+            $('#preview-img').attr('src', e.target.result).show();
+            // Ocultar el label con la clase image-button y el span con id file-chosen
+            $('.image-button').hide();
+            $('#file-chosen').hide();
+        };
+        reader.readAsDataURL(file);
+    } else {
+        // Restablecer si no hay archivo seleccionado
+        $('#file-chosen').text('No file chosen').show();
+        $('#preview-img').hide();
+        // Mostrar el label y el file-chosen de nuevo si no hay imagen seleccionada
+        $('.image-button').show();
+        $('#file-chosen').show();
+    }
+});
+

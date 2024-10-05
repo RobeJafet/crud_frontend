@@ -20,13 +20,17 @@
                         <div class="row justify-content-center">
                             <div class="col-12 col-lg-9">
                                 <div class="brown-photo">
-                                    <a href="#" class="btn under-white">
-                                        Agregar Imagen
-                                        <svg width="9" height="10" viewBox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M0 5L9 5" stroke="#F7F6F3" />
-                                            <path d="M4.5 0.5V9.5" stroke="#F7F6F3" />
-                                        </svg>
-                                        <input type="file" id="image" class="input" accept="image/*">
+                                    <a href="#" class="decor-none d-flex align-items-center justify-content-center flex-column h-100">
+                                        <!-- actual upload which is hidden -->
+                                        <input type="file" id="image-btn" accept="image/*" hidden/>
+
+                                        <!-- our custom upload button -->
+                                        <label for="image-btn" class="btn under-white image-button">Elegir imagen</label>
+
+                                        <img id="preview-img" src="#" alt="Vista previa de la imagen" style="display: none;"/>
+
+                                        <!-- name of file chosen -->
+                                        <span id="file-chosen" class="text-center pt-10">No file chosen</span>
                                     </a>
                                 </div>
                             </div>
