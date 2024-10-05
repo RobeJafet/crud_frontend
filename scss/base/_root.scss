@@ -548,3 +548,9 @@ input{
     overflow-y: auto;
     overflow-x: hidden;
 }
+
+#productos{
+    .img-wrapper{
+        aspect-ratio: 0.75;
+    }
+}
