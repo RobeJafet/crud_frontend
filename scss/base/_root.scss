@@ -56,6 +56,13 @@ ul{
     color: $placeholder-color;
 }
 
+.select-rol{
+    background-color: transparent;
+    color: white;
+    border: none;
+    outline: none;
+}
+
 .h1,
 .h1,
 .h2,
@@ -133,6 +140,11 @@ input{
         border-radius: 20px;
         background-color: $offwhite;
         position: relative;
+
+        & .text-lg-center{
+            overflow-wrap: break-word;
+        }
+        
         .datos{
             display: flex;
             flex-direction: column;
@@ -210,6 +222,16 @@ input{
         }
     }
     .invalid-email{
+        color: $white;
+        display: none;
+        &.show{
+            padding-top: 50px;
+            display: flex;
+            width: 100%;
+            justify-content: center;
+        }
+    }
+    .invalid-phone{
         color: $white;
         display: none;
         &.show{

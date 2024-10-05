@@ -229,6 +229,9 @@ $(document).on('click', function (event) {
       success: function () {
         consultar();
       },
+      error: function (e) {
+        console.log(e);
+      }
     });
   }
   
@@ -237,6 +240,14 @@ $(document).on('click', function (event) {
     var id = $(this).data('id');
     $('.btn-eliminar-modal').data('id', id);
   });
+
+  $(document).on('click', '.btn-eliminar-modal', function (event) {
+    event.preventDefault();
+    var id = $(this).data('id');
+    console.log(id);
+    deleteUser(id);
+  });
+  
   
   $(document).on('click', '.btn-editar', function (event) {
     event.preventDefault();
@@ -268,22 +279,39 @@ $(document).on('click', function (event) {
   
   });
   
-  $(document).on('click', '.btn-eliminar-modal', function (event) {
-    event.preventDefault();
-    var id = $(this).data('id');
-    $('.container-modal').removeClass('show');
-    deleteUser(id);
-  });
-  
   $(document).on('click', '#btn-editar-modal', function (event) {
     event.preventDefault();
+    
     var name = $('#input-name-edit').val();
     var role = $('#select-input-edit').val();
     var email = $('#input-email-edit').val();
     var phone = $('#input-tel-edit').val();
     var locacion = $('#input-locacion-edit').val();
     var id = $(this).data('id');
+    
+    // Validación de campos vacíos
+    if (!name || !role || !email || !phone) {
+      $('#form-editar .invalid-fields .empty-fields').addClass('show');
+      return;
+    }
+  
+    // Validación de email
+    var emailRegex = /^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/;
+    if (!emailRegex.test(email)) {
+      $('#form-editar .invalid-fields .invalid-email').addClass('show');
+      return;
+    }
+  
+    // Validación de número de teléfono
+    var phoneRegex = /^\d{10}$/;
+    if (!phoneRegex.test(phone)) {
+      $('#form-editar .invalid-fields .invalid-phone').addClass('show');
+      return;
+    }
+  
     console.log(name, role, email, phone, id);
+    
+    // Primer llamada AJAX para actualizar los datos del usuario
     $.ajax({
       url: `https://api.mediterrum.site/usuarios/${id}`,
       type: 'PUT',
@@ -292,21 +320,39 @@ $(document).on('click', function (event) {
       },
       data: JSON.stringify({
         nuevoNombre: name,
-        nuevoRol: role,
         nuevoEmail: email,
         nuevoTelefono: phone,
         nuevaLocacion: locacion,
       }),
       success: function (response) {
         console.log(response);
-        $('.container-modal').removeClass('show');
-        consultar();
+        
+        // Después de actualizar los datos, cambia el rol del usuario
+        $.ajax({
+          url: `https://api.mediterrum.site/usuarios/${id}/rol`,
+          type: 'PUT',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          data: JSON.stringify({
+            nuevoRol: role // Asegúrate de que este campo sea el correcto según tu API
+          }),
+          success: function (roleResponse) {
+            console.log('Rol actualizado:', roleResponse);
+            $('.container-modal').removeClass('show');
+            consultar(); // Llama a la función para actualizar la vista después de ambas actualizaciones.
+          },
+          error: function (xhr, status, error) {
+            console.log('Error al actualizar el rol:', xhr.responseJSON.message || 'Error no especificado');
+          }
+        });
       },
-      error: function (error) {
-        console.log(error);
+      error: function (xhr, status, error) {
+        console.log('Error en actualización de datos:', xhr.responseJSON.message || 'Error no especificado');
       }
     });
   });
+  
   
   $('#form-agregar').on('submit', function(e) {
     e.preventDefault();
@@ -331,6 +377,13 @@ $(document).on('click', function (event) {
       $('#modal-agregar .invalid-fields .invalid-email').addClass('show');
       return;
     }
+
+    // Validación de número de teléfono (exactamente 10 dígitos)
+  var phoneRegex = /^\d{10}$/; // Asegura que el número tenga exactamente 10 dígitos
+  if (!phoneRegex.test(phone)) {
+    $('#modal-editar .invalid-fields .invalid-phone').addClass('show');
+    return;
+  }
   
     $.ajax({
       url: 'https://api.mediterrum.site/usuarios',

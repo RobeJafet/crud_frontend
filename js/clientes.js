@@ -176,7 +176,7 @@ function consultar() {
       },
       data: JSON.stringify({
         nombre: name,
-        usuario: 6,
+        usuario: 28,
         email: email,
         telefono: phone,
         intereses: intereses,
