@@ -1,10 +1,16 @@
+var token;
+
 $(function(){
-    console.log('ready');
     const urlParams = new URLSearchParams(window.location.search);
+    token = window.localStorage.getItem('token');
     var sku = urlParams.get('sku');
     $.ajax({
         url: 'https://api.mediterrum.site/productos/'+sku,
         type: 'GET',
+        headers: {
+            'Content-Type': 'application/json', 
+            'Authorization': 'Bearer ' + token
+        },
         success: function (result) {
             var producto = result;  
             console.log(producto);
@@ -46,6 +52,10 @@ $('#editar-producto').submit(function(e){
     $.ajax({
         url: 'https://api.mediterrum.site/productos/' + sku + '/inventario',
         type: 'PUT',
+        headers: {
+            'Content-Type': 'application/json', 
+            'Authorization': 'Bearer ' + token
+        },
         contentType: 'application/json',  // Asegurar que el contenido sea JSON
         data: JSON.stringify({"cantidad_inventario": cantidad}), // Convertir el valor de cantidad a JSON
         success: function (result) {
@@ -58,6 +68,10 @@ $('#editar-producto').submit(function(e){
     $.ajax({
         url: 'https://api.mediterrum.site/productos/' + sku,
         type: 'PUT',
+        headers: {
+            'Content-Type': 'application/json', 
+            'Authorization': 'Bearer ' + token
+        },
         contentType: 'application/json',  // Especificar el tipo de contenido
         data: JSON.stringify(dataToSend), // Convertir el objeto en JSON
         success: function (result) {
@@ -80,6 +94,10 @@ $('.btn-eliminar-modal').click(function(e){
     $.ajax({
         url: 'https://api.mediterrum.site/productos/' + sku,
         type: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json', 
+            'Authorization': 'Bearer ' + token
+        },
         success: function (result) {
             window.location.href = './productos.html'; // Navigate to ./producto.html
         }, error: function (error) {

@@ -1,3 +1,10 @@
+var token;
+
+$(document).ready(function() {
+    token = window.localStorage.getItem('token');
+});
+
+
 $('#form-agregar-producto').on('submit', function(e) {
     e.preventDefault();
     
@@ -43,13 +50,16 @@ $('#form-agregar-producto').on('submit', function(e) {
         descripcion: descripcion || null, // Si no hay descripción, se envía como null
     };
 
-    console.log(productoData);
 
     // Enviar los datos a la API
     $.ajax({
         url: 'https://api.mediterrum.site/productos/',
         type: 'POST',
         contentType: 'application/json',
+        headers: {
+            'Content-Type': 'application/json', 
+            'Authorization': 'Bearer ' + token
+        },
         data: JSON.stringify(productoData),
         success: function(response) {
             alert('Producto agregado correctamente');

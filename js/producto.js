@@ -1,10 +1,16 @@
+var token;
+
 function consultar() {
+    token = window.localStorage.getItem('token');
     $.ajax({
       url: 'https://api.mediterrum.site/productos',
       type: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + token 
+    },
       success: function (result) {
         var productos = result;
-        console.log(productos);
         var html = '';
         productos.forEach(producto => {
             if (producto.descuento>0) {
@@ -25,8 +31,8 @@ function consultar() {
                                 <div class="divider-sm"></div>
                             </div>
                             <div class="d-flex gap-3 justify-content-center">
-                                <p class="discount">$${producto.costo-(producto.costo*(producto.descuento/100))}</p>
-                                <p>$${producto.costo}</p>
+                                <p>$${producto.costo-(producto.costo*(producto.descuento/100))}</p>
+                                <p class="discount">$${producto.costo}</p>
                             </div>
                             <div class="d-flex justify-content-center pt-25">
                                 <button class="btn dark-brown">

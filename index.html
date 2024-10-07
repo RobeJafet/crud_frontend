@@ -7,229 +7,46 @@
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <link rel="stylesheet" type="text/css" href="./css/style.css">
     <link rel="icon" href="./test.ico">
-    <title>Mediterrum</title>
+    <title>Mediterrum Red</title>
 </head>
-<body>
+<body>  
     <div class="loader"></div>
-    <header></header>
-    <main id="page-crud" class="container-crud">
-        <div class="container-fluid px-15 px-lg-30 d-flex flex-column h-100">
-           <div class="d-flex justify-content-center justify-content-lg-between pt-20 pt-lg-30">
-                <div class="d-flex gap-3">
-                    <a href="#" class="btn green" data-toggle="show" data-target="#modal-agregar">
-                        Agregar Usuario
-                        <svg width="12" height="13" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg" class="mb-little-2">
-                            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 7L4.37113e-08 7L0 6L12 6V7Z" fill="currentColor"/>
-                            <path fill-rule="evenodd" clip-rule="evenodd" d="M5.5 12.5V0.5H6.5V12.5H5.5Z" fill="currentColor"/>
-                        </svg>
-                    </a>
-                    <a href="#" class="btn disabled">
-                        Filtrar
-                        <svg width="14" height="7" viewBox="0 0 14 7" fill="none" xmlns="http://www.w3.org/2000/svg" class="mb-little-2">
-                            <path d="M1 0.5H13M3 3.5H11M5 6.5H9" stroke="#776254" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </a>
-                </div>
-           </div>
-           <div class="flex-fill d-flex flex-column pb-20 pt-30">
-                <div class="crud-box flex-fill">
-                    <div class="row d-none d-lg-flex r-gap-acciones">
-                        <div class="col-md-6 col-lg-12">
-                            <div class="row pt-lg-30">
-                                <div class="col-lg-3-esp px-7p5">
-                                    <div class="text-center px-10">
-                                        <p class="detalle">Nombre</p>
-                                    </div>
-                                </div>
-                                <div class="col-lg-2-esp px-7p5">
-                                    <div class="text-center">
-                                        <p class="detalle">Rol</p>
-                                    </div>
-                                </div>
-                                <div class="col-lg-2-esp px-7p5">
-                                    <div class="text-center">
-                                        <p class="detalle">Email</p>
-                                    </div>
-                                </div>
-                                <div class="col-lg-2-esp px-7p5">
-                                    <div class="text-center">
-                                        <p class="detalle">Telefono</p>
-                                    </div>
-                                </div>
-                                <div class="col-lg-1-esp px-7p5">
-                                    <div class="text-center">
-                                        <p class="detalle">Puntaje</p>
-                                    </div>
-                                </div>
-                                <div class="col-lg-1-esp px-7p5">
-                                    <div class="text-center">
-                                        <p class="detalle">Nivel</p>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3-esp px-7p5">
-                                    <div class="text-center">
-                                        <p class="detalle">Acciones</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div id="users" class="pb-lg-30 pt-10">
-                    </div>
-                    <div class="reticula">
-                        <div class="row h-100 r-gap-acciones">
-                            <div class="col-lg-3-esp pr-0 pl-7p5">
-                                <div class="d-flex justify-content-end h-100">
-                                    <div class="divider-reticula"></div>
-                                </div>
-                            </div>
-                            <div class="col-lg-2-esp pr-0 pl-7p5">
-                                <div class="d-flex justify-content-end h-100">
-                                    <div class="divider-reticula"></div>
-                                </div>
-                            </div>
-                            <div class="col-lg-2-esp pr-0 pl-7p5">
-                                <div class="d-flex justify-content-end h-100">
-                                    <div class="divider-reticula"></div>
-                                </div>
-                            </div>
-                            <div class="col-lg-2-esp pr-0 pl-7p5">
-                                <div class="d-flex justify-content-end h-100">
-                                    <div class="divider-reticula"></div>
-                                </div>
-                            </div>
-                            <div class="col-lg-1-esp pr-0 pl-7p5">
-                                <div class="d-flex justify-content-end h-100">
-                                    <div class="divider-reticula"></div>
-                                </div>
-                            </div>
-                            <div class="col-lg-1-esp pr-0 pl-7p5">
-                                <div class="d-flex justify-content-end h-100">
-                                    <div class="divider-reticula"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="d-flex justify-content-center pb-30 pt-20">
-                    <a href="#" class="btn green small disabled">
-                        Descargar Excel
-                        <svg width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M2.47518 4.49998V1.49998C2.47518 1.32317 2.54542 1.1536 2.67044 1.02858C2.79547 0.903551 2.96503 0.833313 3.14185 0.833313H12.4752C12.652 0.833313 12.8216 0.903551 12.9466 1.02858C13.0716 1.1536 13.1418 1.32317 13.1418 1.49998V13.5C13.1418 13.6768 13.0716 13.8464 12.9466 13.9714C12.8216 14.0964 12.652 14.1666 12.4752 14.1666H3.14185C2.96503 14.1666 2.79547 14.0964 2.67044 13.9714C2.54542 13.8464 2.47518 13.6768 2.47518 13.5V10.5M10.1418 4.49998H11.1418M9.14185 7.16665H11.1418M9.14185 9.83331H11.1418M3.14185 6.49998L5.14185 8.49998M5.14185 6.49998L3.14185 8.49998M1.14185 4.49998H7.14185V10.5H1.14185V4.49998Z" stroke="#F7F6F3" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </a>
-                </div>
-           </div>
+    <div class="d-flex justify-content-center pt-30">
+        <div class="logo-login">
+            <img src="./assets/logoMed.jpg" alt="Logo">
         </div>
-        <div class="container-modal" id="modal-agregar">
-            <div class="toggle-modal" data-toggle="show" data-target="#modal-agregar"></div>
-            <div class="row h-100 align-items-center justify-content-center">
-                <div class="col-10 col-md-7 col-lg-4">
-                    <div class="modal">
-                        <div class="d-flex justify-content-between">
-                            <h2>Usuario Registro</h2>
-                            <a href="#" class="close-button" data-toggle="show" data-target="#modal-agregar">
-                                <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M0.514648 0.757355L8.99993 9.24264M8.99993 0.757355L0.514649 9.24264" stroke="#F1EFE9"/>
-                                </svg>
-                            </a>
+    </div>
+    <main id="page-login">
+        <div class="container-fluid px-15 px-lg-30 pb-30">
+            <div class="row justify-content-center pt-60 pt-md-80 pt-lg-120">
+                <div class="col-12 col-md-10 col-lg-6">
+                    <div class="container-personas">
+                        <div class="row justify-content-center">
+                            <div class="col-10 col-lg-6">
+                                <h2 class="text-center">Iniciar sesión</h2>
+                                <form action="submit" id="login-form">
+                                    <p class="text-center pb-15 pt-30">Correo</p>
+                                    <input class="input-default dark text-center" type="email" class="input" placeholder="Escribe tu correo" id="email-input">
+                                    <p class="text-center pb-15 pt-40">Contraseña</p>
+                                    <input class="input-default dark text-center" type="password" class="input" placeholder="Escribe tu contraseña" id="password-input">
+                                    <div class="d-flex justify-content-center pt-30">
+                                        <button class="btn green" action="submit">
+                                            Entrar
+                                        </button>
+                                    </div>
+                                    <div class="d-flex justify-content-center">
+                                        <div id="error-message" class="mt-20">
+                                            Correo o contraseña incorrectos
+                                        </div>
+                                    </div>
+                                </form> 
+                            </div>
                         </div>
-                        <form id="form-agregar">
-                            <div class="container-input">
-                                <input id="input-name" type="text" class="input-default" placeholder="Escribe el nombre">
-                                <select class="select-rol" name="select-input">
-                                    <option value="">Rol</option>
-                                    <option value="Distribuidor">Distribuidor</option>
-                                    <option value="Promotor">Promotor</option>
-                                    <option value="Vendedor">Vendedor</option>
-                                </select>
-                                <input id="input-email" type="text" class="input-default" placeholder="Email">
-                                <input id="input-tel" type="text" class="input-default" placeholder="Télefono">
-                            </div>
-                            <div class="invalid-fields">
-                                <p class="empty-fields">Debes agregar todos los campos del usuario</p>
-                                <p class="invalid-email">Por favor introduce un email válido</p>
-                                <p class="invalid-phone">Por favor introduce un número de Télefono correcto</p>
-                            </div>
-                            <div class="d-flex justify-content-center pt-25 pt-lg-45">
-                                <button class="btn white">
-                                    Agregar Usuario
-                                    <svg width="12" height="13" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M0 6.5L12 6.5M6 0.5V12.5" stroke="#776254"/>
-                                    </svg>
-                                </button>
-                            </div>
-                        </form>
+                        
                     </div>
                 </div>
             </div>
         </div>
-        <div class="container-modal" id="modal-eliminar">
-            <div class="toggle-modal" data-toggle="show" data-target="#modal-eliminar"></div>
-            <div class="row h-100 align-items-center justify-content-center">
-                <div class="col-10 col-lg-4">
-                    <div class="modal">
-                        <div class="d-flex justify-content-between">
-                            <h2>Borrar</h2>
-                            <a href="#" class="close-button" data-toggle="show" data-target="#modal-eliminar">
-                                <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M0.514648 0.757355L8.99993 9.24264M8.99993 0.757355L0.514649 9.24264" stroke="#F1EFE9"/>
-                                </svg>
-                            </a>
-                        </div>
-                        <div class="d-flex flex-column align-items-center pt-lg-30">
-                            <p class="pb-lg-50">¿Estas seguro que quieres eliminar este usuario?</p>
-                            <a href="#" class="btn white btn-eliminar-modal ">
-                                Borrar Usuario
-                                <svg width="15" height="9" viewBox="0 0 15 9" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M6.57696 2.96154L9.65388 6.03846M9.65388 2.96154L6.57696 6.03846M4.42311 0.5L1.34619 4.5L4.42311 8.5H13.6539V0.5H4.42311Z" stroke="#776254" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container-modal" id="modal-editar">
-            <div class="toggle-modal" data-toggle="show" data-target="#modal-editar"></div>
-            <div class="row h-100 align-items-center justify-content-center">
-                <div class="col-10 col-lg-4">
-                    <div class="modal">
-                        <div class="d-flex justify-content-between">
-                            <h2>Edición</h2>
-                            <a href="#" class="close-button" data-toggle="show" data-target="#modal-editar">
-                                <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M0.514648 0.757355L8.99993 9.24264M8.99993 0.757355L0.514649 9.24264" stroke="#F1EFE9"/>
-                                </svg>
-                            </a>
-                        </div>
-                        <form id="form-editar">
-                            <div class="container-input">
-                                <input id="input-name-edit" type="text" class="input-default" placeholder="Escribe el nombre">
-                                <select class="select-rol" name="select-input-edit">
-                                    <option value="">Rol</option>
-                                    <option value="Distribuidor">Distribuidor</option>
-                                    <option value="Promotor">Promotor</option>
-                                    <option value="Vendedor">Vendedor</option>
-                                </select>
-                                <input id="input-email-edit" type="text" class="input-default" placeholder="Email">
-                                <input id="input-tel-edit" type="text" class="input-default" placeholder="Télefono">
-                            </div>
-                            <div class="d-flex justify-content-center pt-25 pt-lg-45">
-                                <button class="btn white">
-                                    Editar Usuario
-                                    <svg width="12" height="11" viewBox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M7.80206 1.84283L9.65717 3.69794M1.61837 8.02652L1 10.5L3.47348 9.88163L10.6379 2.71721C10.8698 2.48528 11 2.17077 11 1.84283C11 1.51489 10.8698 1.20038 10.6379 0.96846L10.5315 0.8621C10.2996 0.630248 9.9851 0.5 9.65717 0.5C9.32923 0.5 9.01471 0.630248 8.78279 0.8621L1.61837 8.02652Z" stroke="#776254" stroke-width="0.618369" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                </button>
-                            </div>
-                        </form>      
-                    </div>
-                </div>
-            </div>
-        </div>
-      
     </main>
     <footer></footer>
     <!-- LIBS -->
@@ -238,5 +55,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.15.2/js/selectize.min.js" integrity="sha512-IOebNkvA/HZjMM7MxL0NYeLYEalloZ8ckak+NDtOViP7oiYzG5vn6WVXyrJDiJPhl4yRdmNAG49iuLmhkUdVsQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- MAIN JS -->
     <script src="./js/app.js"></script>
+    <script src="./js/login.js"></script>
 </body>
 </html>

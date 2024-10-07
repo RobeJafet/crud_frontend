@@ -1,6 +1,8 @@
+var token;
+
 $(document).ready(function() {
     const id = obtenerUsuarioIdDesdeUrl(); // Asegúrate de definir esta función
-
+   
     if (id) {
         consultar(id);
         redAnalytics(id);
@@ -17,10 +19,14 @@ function obtenerUsuarioIdDesdeUrl() {
 
 function consultar(id) {
     const usuario_id = id
-
+    token = window.localStorage.getItem('token');
     $.ajax({
         url: `https://api.mediterrum.site/usuarios/${usuario_id}`,
         method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + token 
+        },
         contentType: 'application/json',
         
         success: function(response) {
@@ -113,6 +119,10 @@ function consultar(id) {
             $.ajax({
                 url: `https://api.mediterrum.site/listas/distribuidores`,
                 method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': 'Bearer ' + token 
+                },
                 contentType: 'application/json',
                 success: function(response) {
                     const lista = response;
@@ -183,6 +193,10 @@ function consultar(id) {
             $.ajax({
                 url: `https://api.mediterrum.site/listas/vendedores`,
                 method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': 'Bearer ' + token 
+                },
                 contentType: 'application/json',
                 success: function(response) {
                     const lista = response;
@@ -210,6 +224,10 @@ function consultar(id) {
     $.ajax({
         url: `https://api.mediterrum.site/usuarios/${usuario_id}/red`,
         method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + token 
+        },
         contentType: 'application/json',
         success: function(response) {
             const vendedores = new Set();
@@ -274,6 +292,10 @@ function redAnalytics(id){
      $.ajax({
         url: `https://api.mediterrum.site/reporte/reporte-trimestral-red/${fechaFormateada}/${usuario_id}`,
         method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + token 
+        },
         contentType: 'application/json',
         success: function(response) {
             const ventas=response[0];
@@ -306,6 +328,10 @@ $(document).on('click', '#cambiar-distribuidor', function (event) {
     $.ajax({
         url: `https://api.mediterrum.site/usuarios/${usuarioId}/distribuidor`,
         method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + token 
+        },
         contentType: 'application/json',
         data: JSON.stringify({
             nuevoDistribuidor: nuevoDistribuidorId
@@ -331,6 +357,10 @@ $(document).on('click', '#cambiar-distribuidor', function (event) {
     $.ajax({
         url: `https://api.mediterrum.site/usuarios/${usuarioId}/vendedor`,
         method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + token 
+        },
         contentType: 'application/json',
         data: JSON.stringify({
             nuevoDistribuidor: nuevoDistribuidorId

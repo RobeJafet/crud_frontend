@@ -1,8 +1,15 @@
+var token;
+
 function consultar() {
+    token = localStorage.getItem('token');
     $.ajax({
-      url: 'https://api.mediterrum.site/clientes',
-      type: 'GET',
-      success: function (result) {
+        url: 'https://api.mediterrum.site/clientes',
+        type: 'GET',
+        headers: {
+            'Content-Type': 'application/json', 
+            'Authorization': 'Bearer ' + token
+        },
+        success: function (result) {
         var clientes = result;
         var html = '';
         clientes[0].forEach(cliente => {
@@ -136,11 +143,15 @@ function consultar() {
  
   function deleteCliente(id) {
     $.ajax({
-      url: `https://api.mediterrum.site/clientes/${id}`,
-      type: 'DELETE',
-      success: function () {
-        consultar();
-      },
+        url: `https://api.mediterrum.site/clientes/${id}`,
+        type: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json', 
+            'Authorization': 'Bearer ' + token
+        },
+        success: function () {
+            consultar();
+        },
     });
   }
 
@@ -171,9 +182,10 @@ function consultar() {
     $.ajax({
       url: 'https://api.mediterrum.site/clientes',
       type: 'POST',
-      headers:{
-        'Content-Type': 'application/json',
-      },
+      headers: {
+        'Content-Type': 'application/json', 
+        'Authorization': 'Bearer ' + token
+     },
       data: JSON.stringify({
         nombre: name,
         usuario: 28,
@@ -217,6 +229,10 @@ function consultar() {
     $.ajax({
         url: 'https://api.mediterrum.site/clientes/excel',
         type: 'GET',
+        headers: {
+            'Content-Type': 'application/json', 
+            'Authorization': 'Bearer ' + token
+        },
         xhrFields: {
             responseType: 'blob' 
         },
@@ -264,8 +280,9 @@ function consultar() {
     $.ajax({
         url: `https://api.mediterrum.site/clientes/${id}`,
         type: 'PUT',
-        headers:{
-            'Content-Type': 'application/json',
+        headers: {
+            'Content-Type': 'application/json', 
+            'Authorization': 'Bearer ' + token
         },
         data: JSON.stringify({
             nombre: name,
@@ -299,7 +316,8 @@ $(document).on('click', '.btn-editar', function (event) {
       url: `https://api.mediterrum.site/clientes/${id}`,
       type: 'GET',
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json', 
+        'Authorization': 'Bearer ' + token
       },
       success: function (response) {
         cliente = response[0][0];
@@ -324,6 +342,10 @@ $(document).on('click', '.btn-editar', function (event) {
       $.ajax({
         url: `https://api.mediterrum.site/clientes/param/${name}`,
         type: 'GET',
+        headers: {
+            'Content-Type': 'application/json', 
+            'Authorization': 'Bearer ' + token
+        },
         success: function (result) {
           var clientes = result;
           var html = '';

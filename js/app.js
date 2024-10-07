@@ -7,12 +7,17 @@ $(window).on('load', function () {
   $('.loader').fadeOut(500);
 });
 
+$(document).on('click', function (event) {
+  if (!$(event.target).closest('.cerrar-sesion-modal, #logo-header').length) {
+      $('.cerrar-sesion-modal.show').removeClass('show');
+  }
+});
+
 $(document).on('click', '[data-toggle="show"]', function (event) {
   event.preventDefault()
   var target = $(this).data('target')
   $(target).toggleClass('show')
 })
-
 
 $(document).ready(function() {
   setTimeout(function() {
@@ -28,3 +33,8 @@ $(document).ready(function() {
 
 
 
+$(document).on('click', '.cerrar-sesion-modal', function (event) {
+  event.preventDefault();
+  window.localStorage.clear();
+  window.location.href = './';
+});

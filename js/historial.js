@@ -2,13 +2,19 @@ $(function(){
     consultar();
 })
 
+var token;
 
 function consultar(){
+    token = window.localStorage.getItem('token');
     var params = new URLSearchParams(window.location.search);
     var usuario_id = params.get('usuario_id');
     $.ajax({
         url: 'https://api.mediterrum.site/usuarios/' + usuario_id + '/historial',
         type: 'GET',
+        headers: {
+            'Content-Type': 'application/json', 
+            'Authorization': 'Bearer ' + token
+        },
         success: function (result) {
             var productos = result[0];
             console.log(productos);

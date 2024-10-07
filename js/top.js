@@ -1,10 +1,13 @@
+var token;
+
 $(function(){
     consultar();
 })
 
-function consultar(){
 
-    // Obtener la fecha actual
+function consultar(){
+    token = window.localStorage.getItem('token');
+
     const fechaActual = new Date();
     const año = fechaActual.getFullYear();
     const mes = ('0' + (fechaActual.getMonth() + 1)).slice(-2);
@@ -16,6 +19,10 @@ function consultar(){
     $.ajax({
         url: `https://api.mediterrum.site/reporte/top-usuarios/${fechaFormateada}/10`,
         method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + token 
+        },
         contentType: 'application/json',
         success: function(response) {
              // Iterar sobre la respuesta para agregar los usuarios
