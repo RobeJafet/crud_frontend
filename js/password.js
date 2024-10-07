@@ -13,7 +13,7 @@ $(function() {
         });
 
         $.ajax({
-            url: `http://localhost:3000/usuarios/${userId}/contrasena`, // Asegúrate de que esta URL coincide con la ruta que has definido
+            url: `http://api.mediterrum.site/usuarios/${userId}/contrasena`, // Asegúrate de que esta URL coincide con la ruta que has definido
             type: 'PUT',
             contentType: 'application/json',
             data: JSONData,
