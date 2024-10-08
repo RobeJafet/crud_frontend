@@ -21,6 +21,8 @@ $(function() {
                 'Authorization': `Bearer ${token}` // Añadir el token en el encabezado
             },
             success: function(response) {
+                window.localStorage.setItem('token', token);
+                window.localStorage.setItem('id', userId);
                 window.location.href = './usuarios.html';
             },
             error: function(xhr, status, error) {
