@@ -27,7 +27,7 @@ function consultar() {
                 <div class="col-10 col-md-4 col-lg-2 h-100">
                     <div href="#" class="img-wrapper">
                         <a href="#" class="d-block w-100 h-100">
-                            <img src="${producto.imagen}" alt="gotero.jpg">
+                            <img src="${producto.imagen}" alt="../assets/gotero.jpg">
                         </a>
                         <a href="./editar-producto.html?sku=${producto.producto_sku}" class="btn abs green">
                             Ver Info
@@ -74,7 +74,7 @@ $(document).on('submit', '.add-cart-form', function(e) {
         console.log("No token found");
         return;
     }
-    
+
     var usuario_id = window.localStorage.getItem('id');
     if (!usuario_id) {
         console.log("No user ID found");
@@ -100,6 +100,7 @@ $(document).on('submit', '.add-cart-form', function(e) {
         data: JSONData,
         success: function(data) {
             console.log('Producto agregado al carrito');
+            //window.location.href = './productos.html';
         },
         error: function(error) {
             console.log(error);
