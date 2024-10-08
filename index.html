@@ -40,15 +40,47 @@
                                         </div>
                                     </div>
                                 </form> 
+
+                                <div class="d-flex justify-content-center pt-20">
+                                    <a href="#" data-toggle="show" data-target="#modal-recuperar" class="text-decoration-underline">Olvidé mi contraseña</a>
+                                </div>
                             </div>
                         </div>
                         
                     </div>
                 </div>
             </div>
-        </div>
+        </div>      
     </main>
     <footer></footer>
+
+    <div class="container-modal" id="modal-recuperar">
+        <div class="toggle-modal" data-toggle="show" data-target="#modal-recuperar"></div>
+        <div class="row h-100 align-items-center justify-content-center">
+            <div class="col-10 col-lg-4">
+                <div class="modal">
+                    <div class="d-flex justify-content-between">
+                        <h2>Olvidé mi contraseña</h2>
+                        <a href="#" class="close-button" data-toggle="show" data-target="#modal-recuperar">
+                            <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0.514648 0.757355L8.99993 9.24264M8.99993 0.757355L0.514649 9.24264" stroke="#F1EFE9"/>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="d-flex flex-column align-items-center pt-30">
+                        <p class="pb-10 pb-md-20 pb-lg-30">Ingresa tu correo para restablecer la contraseña.</p>
+                        <input type="email" class="input-default dark text-center" placeholder="Escribe tu correo" id="recuperar-contrasena">
+                        <a href="#" class="btn white btn-recuperar mt-40">
+                            Enviar
+                            <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M14 7.5L1 13L5 7.5L1 1L14 7.5Z" stroke="#776254" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- LIBS -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>

@@ -13,7 +13,7 @@ $(function() {
         $.ajax({
             url: 'https://api.mediterrum.site/usuarios/login',
             type: 'POST',
-            contentType: 'application/json', // Add this line
+            contentType: 'application/json', 
             data: JSONData,
             success: function(data) {
                 window.localStorage.setItem('token', data.token);
@@ -31,3 +31,34 @@ $(function() {
     }
     
 });
+
+$(function() {
+    $('.btn-recuperar').click(function(e) {
+        e.preventDefault(); 
+
+        var emailRecuperar = $('#recuperar-contrasena').val(); 
+
+        if (emailRecuperar) {
+            var JSONData = JSON.stringify({
+                email: emailRecuperar
+            });
+
+            $.ajax({
+                url: 'https://api.mediterrum.site/usuarios/recuperar', 
+                type: 'POST',
+                contentType: 'application/json',
+                data: JSONData,
+                success: function(response) {
+                    alert('Correo enviado exitosamente. Revisa tu bandeja de entrada.');
+                    $('#modal-recuperar').removeClass('show'); 
+                },
+                error: function(error) {
+                    alert('No se encontró un usuario con ese correo.');
+                }
+            });
+        } else {
+            alert('Por favor, ingresa un correo válido.');
+        }
+    });
+});
+
