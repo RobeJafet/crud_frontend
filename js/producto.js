@@ -100,7 +100,7 @@ $(document).on('submit', '.add-cart-form', function(e) {
         data: JSONData,
         success: function(data) {
             console.log('Producto agregado al carrito');
-            //window.location.href = './productos.html';
+            consultar();
         },
         error: function(error) {
             console.log(error);
