@@ -27,7 +27,8 @@ function consultar() {
                 <div class="col-10 col-md-4 col-lg-2 h-100">
                     <div href="#" class="img-wrapper">
                         <a href="./producto-vista.html?sku=${producto.producto_sku}" class="d-block w-100 h-100">
-                            <img src="${producto.imagen}" alt="../assets/gotero.jpg">
+                        <!-- <img src="${producto.imagen}" alt="../assets/gotero.jpg"> -->
+                        <img src="./assets/gotero.jpg" alt="../assets/gotero.jpg">
                         </a>
                         <a href="./editar-producto.html?sku=${producto.producto_sku}" class="btn abs green">
                             Ver Info
@@ -102,7 +103,7 @@ $(document).on('submit', '.add-cart-form', function(e) {
         success: function(data) {
             $('.container-carrito').addClass('show');
             $('.modal-carrito').removeClass('vacio');
-            consultar();
+            consultarCarrito();
         },
         error: function(error) {
             console.log(error);

@@ -1,7 +1,9 @@
 var token;
+var idUsuario;
 
 function consultar() {
     token = localStorage.getItem('token');
+    idUsuario = localStorage.getItem('id');
     $.ajax({
         url: 'https://api.mediterrum.site/clientes',
         type: 'GET',
@@ -139,7 +141,7 @@ function consultar() {
         console.log('A problem to access the database');
       }
     });
-  }
+}
  
   function deleteCliente(id) {
     $.ajax({
@@ -188,7 +190,7 @@ function consultar() {
      },
       data: JSON.stringify({
         nombre: name,
-        usuario: 28,
+        usuario: idUsuario,
         email: email,
         telefono: phone,
         intereses: intereses,

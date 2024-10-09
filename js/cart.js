@@ -63,7 +63,8 @@ function consultarCarrito() {
                     <div class="row pt-15">
                         <div class="col-4 d-none d-md-block">
                             <div class="img-wrapper">
-                                <img src="${img}" alt="../assets/gotero.jpg">
+                            <!-- <img src="${img}" alt="../assets/gotero.jpg"> -->
+                            <img src="./assets/gotero.jpg" alt="../assets/gotero.jpg">
                             </div>
                         </div>
                         <div class="col-12 col-md-8">

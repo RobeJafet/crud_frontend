@@ -48,7 +48,6 @@ var token;
 
 
   function consultar() {
-    console.log('Consultando usuarios');
     token = window.localStorage.getItem('token');
     if (!token) {
         setTimeout(function () {
@@ -361,7 +360,6 @@ var token;
             nuevoRol: role // Asegúrate de que este campo sea el correcto según tu API
           }),
           success: function (roleResponse) {
-            console.log('Rol actualizado:', roleResponse);
             $('.container-modal').removeClass('show');
             consultar(); // Llama a la función para actualizar la vista después de ambas actualizaciones.
           },
