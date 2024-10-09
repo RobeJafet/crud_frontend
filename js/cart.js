@@ -1,6 +1,6 @@
 var token;
 
-function consultar() {
+function consultarCarrito() {
     token = window.localStorage.getItem('token');
     if (!token) {
         console.log("No token found");
@@ -120,7 +120,7 @@ function consultar() {
 
 
 $(function() {
-    consultar();
+    consultarCarrito();
 });
 
 $(document).on('click', '.minus-sym', function(e) {
@@ -160,7 +160,7 @@ $(document).on('click', '.minus-sym', function(e) {
             },
             data: JSONData,
             success: function(response) {
-                consultar();
+                consultarCarrito();
             },
             error: function(error) {
                 alert('Error al actualizar la cantidad.');
@@ -205,7 +205,7 @@ $(document).on('click', '.plus-sym', function(e) {
         },
         data: JSONData,
         success: function(response) {
-            consultar();
+            consultarCarrito();
         },
         error: function(error) {
             console.log(error);
@@ -245,7 +245,7 @@ $(document).on('click', '.delete-from-cart', function(e) {
         },
         data: JSONData,
         success: function(response) {
-            consultar();
+            consultarCarrito();
 
             
         },

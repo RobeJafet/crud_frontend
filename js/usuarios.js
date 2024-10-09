@@ -48,6 +48,7 @@ var token;
 
 
   function consultar() {
+    console.log('Consultando usuarios');
     token = window.localStorage.getItem('token');
     if (!token) {
         setTimeout(function () {
@@ -58,8 +59,8 @@ var token;
         url: 'https://api.mediterrum.site/usuarios',
         type: 'GET',
         headers: {
-        'Content-Type': 'application/json', 
-        'Authorization': 'Bearer ' + token
+            'Content-Type': 'application/json', 
+            'Authorization': 'Bearer ' + token
         },
         success: function (result) {
             var users = result;
@@ -243,6 +244,7 @@ var token;
             'Authorization': 'Bearer ' + token 
             },  
         success: function () {
+            $('#modal-eliminar').removeClass('show');
             consultar();
         },
         error: function (e) {
@@ -305,6 +307,10 @@ var token;
     var phone = $('#input-tel-edit').val();
     var locacion = $('#input-locacion-edit').val();
     var id = $(this).data('id');
+
+    $('#form-editar .invalid-fields .empty-fields').removeClass('show');
+    $('#form-editar .invalid-fields .invalid-email').removeClass('show');
+    $('#form-editar .invalid-fields .invalid-phone').removeClass('show');
     
     // Validación de campos vacíos
     if (!name || !role || !email || !phone) {
@@ -381,6 +387,7 @@ var token;
     
     $('#modal-agregar .invalid-fields .empty-fields').removeClass('show');
     $('#modal-agregar .invalid-fields .invalid-email').removeClass('show');
+    $('#modal-agregar .invalid-fields .invalid-phone').removeClass('show');
     
     // Validation
     if (!name || !role || !email || !phone) {
@@ -398,7 +405,7 @@ var token;
     // Validación de número de teléfono (exactamente 10 dígitos)
   var phoneRegex = /^\d{10}$/; // Asegura que el número tenga exactamente 10 dígitos
   if (!phoneRegex.test(phone)) {
-    $('#modal-editar .invalid-fields .invalid-phone').addClass('show');
+    $('#modal-agregar .invalid-fields .invalid-phone').addClass('show');
     return;
   }
   

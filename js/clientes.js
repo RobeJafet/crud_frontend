@@ -267,6 +267,7 @@ function consultar() {
     // Validation
     if (!name || !email || !phone) {
       $('#modal-editar .invalid-fields .empty-fields').addClass('show');
+      $('#modal-agregar .invalid-fields .empty-fields').addClass('show');
       return;
     }
 
@@ -274,7 +275,16 @@ function consultar() {
     var emailRegex = /^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/;
     if (!emailRegex.test(email)) {
       $('#modal-editar .invalid-fields .invalid-email').addClass('show');
+      $('#modal-agregar .invalid-fields .invalid-email').addClass('show');
+
       return;
+    }
+
+    var phoneRegex = /^\d{10}$/;
+    if (!phoneRegex.test(phone)) {
+        $('#modal-editar .invalid-fields .invalid-phone').addClass('show');
+        $('#modal-agregar .invalid-fields .invalid-phone').addClass('show');
+        return;
     }
 
     $.ajax({
