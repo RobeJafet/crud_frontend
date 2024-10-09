@@ -1,3 +1,6 @@
+var id;
+var token;
+
 $(document).ready(function () {
   $("header").load("../partials/header.html");
   $("footer").load("../partials/footer.html");
@@ -29,7 +32,34 @@ $(document).ready(function() {
     }
   })
   }, 10);
+
+  if ((window.localStorage.getItem('token')) && (window.localStorage.getItem('id'))) {
+    id = window.localStorage.getItem('id');
+    token = window.localStorage.getItem('token');
+
+    $.ajax({
+      url: 'https://api.mediterrum.site/usuarios/' + id,
+      type: 'GET',
+      contentType: 'application/json',
+      headers: {
+        'Content-Type': 'application/json', 
+        'Authorization': 'Bearer ' + token
+      },
+      success: function (data) {
+        usuario = data[0][0];
+        console.log(usuario.nombre);
+        $('#usuario-nombre').text(usuario.nombre);
+        $('#usuario-rol').text(usuario.rol);
+
+      },
+      error: function (error) {
+        console.log(error);
+      }
+    });
+
+  }
 });
+
 
 
 
