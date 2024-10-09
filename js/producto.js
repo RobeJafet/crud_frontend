@@ -26,7 +26,7 @@ function consultar() {
                 html += `
                 <div class="col-10 col-md-4 col-lg-2 h-100">
                     <div href="#" class="img-wrapper">
-                        <a href="#" class="d-block w-100 h-100">
+                        <a href="./producto-vista.html?sku=${producto.producto_sku}" class="d-block w-100 h-100">
                             <img src="${producto.imagen}" alt="../assets/gotero.jpg">
                         </a>
                         <a href="./editar-producto.html?sku=${producto.producto_sku}" class="btn abs green">
@@ -69,6 +69,7 @@ $(function() {
 $(document).on('submit', '.add-cart-form', function(e) {
     e.preventDefault();
     
+    
     token = window.localStorage.getItem('token');
     if (!token) {
         console.log("No token found");
@@ -99,7 +100,8 @@ $(document).on('submit', '.add-cart-form', function(e) {
         },
         data: JSONData,
         success: function(data) {
-            console.log('Producto agregado al carrito');
+            $('.container-carrito').addClass('show');
+            $('.modal-carrito').removeClass('vacio');
             consultar();
         },
         error: function(error) {

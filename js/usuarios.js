@@ -90,7 +90,7 @@ var token;
                     </div>
                     <div class="col-8 col-md-5 col-lg-12 pl-0 pl-md-15">
                         <div class="pl-lg-10">
-                            <p class="text-lg-center">${user.rol}</p>
+                            <p class="text-lg-center cap">${user.rol}</p>
                         </div>
                     </div>
                 </div>

@@ -586,3 +586,28 @@ input{
         display: block;
     }
 }
+
+#usuario-rol{
+    text-transform: capitalize;
+}
+
+.cap{
+    text-transform: capitalize;
+}
+
+.desc-container{
+    padding-bottom: 10px;
+    border-bottom: 1px solid $brown;
+}
+
+
+.text-vacio{
+    text-align: center;
+    display: none;
+}
+
+.vacio{
+    .text-vacio{
+        display: block;
+    }
+}

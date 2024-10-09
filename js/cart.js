@@ -38,6 +38,7 @@ function consultar() {
             });
 
             Promise.all(promises).then((responses) => {
+                
                 responses.sort((a, b) => a.index - b.index);
 
                 let html = '';
@@ -101,6 +102,13 @@ function consultar() {
                 $('#productos-carrito').html(html);
 
                 $('.total-amount').html(`Total: $${total.toFixed(2)}`);
+
+
+                if ($('#productos-carrito .row.pt-15').length == 0){
+                    $('.modal-carrito').addClass('vacio');
+                } else{
+                    $('.modal-carrito').removeClass('vacio');
+                }
             });
         },
         error: function() {
@@ -238,6 +246,8 @@ $(document).on('click', '.delete-from-cart', function(e) {
         data: JSONData,
         success: function(response) {
             consultar();
+
+            
         },
         error: function(error) {
             alert('Error al eliminar el producto.');

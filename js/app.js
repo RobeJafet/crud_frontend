@@ -47,7 +47,6 @@ $(document).ready(function() {
       },
       success: function (data) {
         usuario = data[0][0];
-        console.log(usuario.nombre);
         $('#usuario-nombre').text(usuario.nombre);
         $('#usuario-rol').text(usuario.rol);
 
@@ -67,4 +66,14 @@ $(document).on('click', '.cerrar-sesion-modal', function (event) {
   event.preventDefault();
   window.localStorage.clear();
   window.location.href = './';
+});
+
+
+
+$(document).on('click', '.btn-carrito', function (event) {
+   if ($('#productos-carrito .row.pt-15').length == 0){
+    $('.modal-carrito').addClass('vacio');
+   } else{
+    $('.modal-carrito').removeClass('vacio');
+   }
 });
