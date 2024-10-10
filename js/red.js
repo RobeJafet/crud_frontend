@@ -18,8 +18,15 @@ function obtenerUsuarioIdDesdeUrl() {
 
 
 function consultar(id) {
-    const usuario_id = id
+
     token = window.localStorage.getItem('token');
+    if (!token) {
+        setTimeout(function () {
+            $('#modal-unlogin').addClass('show');
+        }, 100);
+    }
+    const usuario_id = id
+
     $.ajax({
         url: `https://api.mediterrum.site/usuarios/${usuario_id}`,
         method: 'GET',
@@ -100,7 +107,7 @@ function consultar(id) {
                 `);
                 
 
-                $('#modificar-red').html(`
+            $('#modificar-red').html(`
             <p class="pt-30">Distribuidor original</p>
             <div class="d-flex flex-column pt-10" id="red-distribuidor">
             </div>
@@ -131,7 +138,7 @@ function consultar(id) {
             
                     // Generar las opciones dinámicamente
                     lista.forEach(distribuidor => {
-                        console.log(distribuidor);
+                        console.log("distribuidires: ", distribuidor);
             
                         $('#select-distribuidor').append(`
                             <option value="${distribuidor.id}">${distribuidor.nombre}</option>
@@ -174,21 +181,22 @@ function consultar(id) {
                     
                     `);
                 
-                    $('#modificar-red').html(`
-            <p class="pt-30">Vendedor original</p>
-            <div class="d-flex flex-column pt-10" id="red-vendedor">
-            </div>
-            <p class="pt-30 pb-10">
-                Cambiar de Vendedor a
-            </p>
-            <select class="select-rol" id="select-vendedor" name="select-input-vendedor">
-            </select>
-            <div class="d-flex justify-content-center pt-30 mt-auto">
-                <button class="btn under-white" id="cambiar-vendedor>
-                    Cambiar superior
-                </button>
-            </div>
+            $('#modificar-red').html(`
+                <p class="pt-30">Vendedor original</p>
+                <div class="d-flex flex-column pt-10" id="red-vendedor">
+                </div>
+                <p class="pt-30 pb-10">
+                    Cambiar de Vendedor a
+                </p>
+                <select class="select-rol" id="select-vendedor" name="select-input-vendedor">
+                </select>
+                <div class="d-flex justify-content-center pt-30 mt-auto">
+                    <button class="btn under-white" id="cambiar-vendedor">
+                        Cambiar superior
+                    </button>
+                </div>
             `);
+                    
 
             $.ajax({
                 url: `https://api.mediterrum.site/listas/vendedores`,
@@ -200,7 +208,7 @@ function consultar(id) {
                 contentType: 'application/json',
                 success: function(response) {
                     const lista = response;
-                    console.log(lista);
+                    console.log("vendedores: ", lista);
             
                     $('#select-vendedor').empty();
             
@@ -248,24 +256,31 @@ function consultar(id) {
     
             // Crear el HTML para mostrar los vendedores
             $('#red-personas-vendedores').html(vendedoresArray.map(vendedor => `
-                <p>${vendedor}</p>
+                <p>${vendedor ? vendedor : "-"}</p>
             `).join(''));
     
             // Crear el HTML para mostrar los promotores
             $('#red-personas-promotores').html(promotoresArray.map(promotor => `
-                <p>${promotor}</p>
+                <p>${promotor ? promotor : "-"}</p>
             `).join(''));
     
             // Crear el HTML para mostrar los distribuidores
             $('#red-personas-distribuidor').html(distribuidoresArray.map(distribuidor => `
-                <p>${distribuidor}</p>
+                <p>${distribuidor ? distribuidor : "-"}</p>
             `).join(''));
 
-             // Crear el HTML para mostrar los vendedores
+             // Crear el HTML para mostrar los distribuidores
              $('#red-distribuidor').html(distribuidoresArray.map(distribuidor => `
-             <p class="pb-5">${distribuidor}</p>
+             <p class="pb-5">${distribuidor ? distribuidor : "No asignado."}</p>
             <div class="pleca-w"></div>
-         `).join(''));
+            `).join(''));
+
+            // Crear el HTML para mostrar los vendedores
+            $('#red-vendedor').html(vendedoresArray.map(vendedor => `
+                <p class="pb-5">${vendedor ? vendedor : "No asignado."}</p>
+                <div class="pleca-w"></div>
+            `).join(''));
+
         },
         error: function(xhr, status, error) {
             console.error('Error:', error);
@@ -304,14 +319,14 @@ function redAnalytics(id){
                 <h2 class="text-center">Red Ventas</h2>
                 <div class="d-flex flex-column justify-content-center h-100">
                 <p class="text-center pt-45 ">En este trimestre se vendieron:</p>
-                <p class="text-center">$${ventas.ingreso_total} MXN en total</p>
+                <p class="text-center">$${ventas.ingreso_total ? ventas.ingreso_total : "0"} MXN en total</p>
                 <p class="text-center pt-25">En este trimestre se vendieron:</p>
-                <p class="text-center">${ventas.productos_vendidos} productos</p>
+                <p class="text-center">${ventas.productos_vendidos ? ventas.productos_vendidos : "0"} productos</p>
                 </div>
             `);
 
         },
-        error: function(xhr, status, error) {
+        error: function(error) {
             console.error('Error:', error);
         }
     });
@@ -351,8 +366,8 @@ $(document).on('click', '#cambiar-distribuidor', function (event) {
   $(document).on('click', '#cambiar-vendedor', function (event) {
     event.preventDefault();
     const usuarioId = obtenerUsuarioIdDesdeUrl();
-    const nuevoDistribuidorId = $('#select-distribuidor').val();
-    console.log(nuevoDistribuidorId);
+    const nuevoVendedorId = $('#select-vendedor').val(); // Corrected the select to vendedor
+    console.log(nuevoVendedorId);
     
     $.ajax({
         url: `https://api.mediterrum.site/usuarios/${usuarioId}/vendedor`,
@@ -363,16 +378,16 @@ $(document).on('click', '#cambiar-distribuidor', function (event) {
         },
         contentType: 'application/json',
         data: JSON.stringify({
-            nuevoDistribuidor: nuevoDistribuidorId
+            nuevoVendedor: nuevoVendedorId // Make sure this matches your API's expected field name
         }),
         success: function(response) {
-            console.log('Distribuidor actualizado:', response);
-            alert(`Distribuidor actualizado correctamente para el usuario con ID: ${usuarioId}`);
+            console.log('Vendedor actualizado:', response);
+            alert(`Vendedor actualizado correctamente para el usuario con ID: ${usuarioId}`);
         },
         error: function(xhr, status, error) {
             console.error('Error:', error);
-            alert('Ocurrió un error al actualizar el distribuidor.');
+            alert('Ocurrió un error al actualizar el vendedor.');
         }
     });
+});
 
-  });

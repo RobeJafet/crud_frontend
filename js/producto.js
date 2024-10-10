@@ -3,8 +3,9 @@ var token;
 function consultar() {
     token = window.localStorage.getItem('token');
     if (!token) {
-        console.log("No token found");
-        return;
+        setTimeout(function () {
+            $('#modal-unlogin').addClass('show');
+        }, 100);
     }
     
     $.ajax({

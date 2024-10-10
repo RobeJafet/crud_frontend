@@ -2,7 +2,12 @@ var token;
 var idUsuario;
 
 function consultar() {
-    token = localStorage.getItem('token');
+    token = window.localStorage.getItem('token');
+    if (!token) {
+        setTimeout(function () {
+            $('#modal-unlogin').addClass('show');
+        }, 100);
+    }
     idUsuario = localStorage.getItem('id');
     $.ajax({
         url: 'https://api.mediterrum.site/clientes',

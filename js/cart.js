@@ -3,6 +3,12 @@ var token;
 function consultarCarrito() {
     token = window.localStorage.getItem('token');
     if (!token) {
+        setTimeout(function () {
+            $('#modal-unlogin').addClass('show');
+        }, 100);
+    }
+    
+    if (!token) {
         console.log("No token found");
         return;
     }

@@ -2,6 +2,11 @@ var token;
 
 $(document).ready(function() {
     token = window.localStorage.getItem('token');
+    if (!token) {
+        setTimeout(function () {
+            $('#modal-unlogin').addClass('show');
+        }, 100);
+    }
 });
 
 

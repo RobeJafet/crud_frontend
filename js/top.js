@@ -7,6 +7,11 @@ $(function(){
 
 function consultar(){
     token = window.localStorage.getItem('token');
+    if (!token) {
+        setTimeout(function () {
+            $('#modal-unlogin').addClass('show');
+        }, 100);
+    }
 
     const fechaActual = new Date();
     const año = fechaActual.getFullYear();
