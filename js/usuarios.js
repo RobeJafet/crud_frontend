@@ -132,7 +132,7 @@ var token;
                     </div>
                     <div class="col-8 col-md-5 col-lg-12 pl-0 pl-md-15">
                         <div class="pl-lg-10">
-                            <p class="text-lg-center">${user.locacion}</p>
+                            <p class="text-lg-center">${user.locacion ? user.locacion : "-"}</p>
                         </div>
                     </div>
                 </div>
@@ -146,7 +146,7 @@ var token;
                     </div>
                     <div class="col-8 col-md-5 col-lg-12 pl-0 pl-md-15">
                         <div class="pl-lg-10">
-                            <p class="text-lg-center">${user.puntos}</p>
+                            <p class="text-lg-center">${user.puntos ? user.puntos : "-"}</p>
                         </div>
                     </div>
                 </div>
@@ -160,7 +160,7 @@ var token;
                     </div>
                     <div class="col-8 col-md-5 col-lg-12 pl-0 pl-md-15">
                         <div class="pl-lg-10">
-                            <p class="text-lg-center">${user.nivel}</p>
+                            <p class="text-lg-center">${user.nivel ? user.nivel : "-"}</p>
                         </div>
                     </div>
                 </div>
@@ -519,7 +519,7 @@ var token;
                     </div>
                     <div class="col-8 col-md-5 col-lg-12 pl-0 pl-md-15">
                         <div class="pl-lg-10">
-                            <p class="text-lg-center">${user.locacion}</p>
+                            <p class="text-lg-center">${user.locacion ? user.locacion : "-" }</p>
                         </div>
                     </div>
                 </div>
@@ -533,7 +533,7 @@ var token;
                     </div>
                     <div class="col-8 col-md-5 col-lg-12 pl-0 pl-md-15">
                         <div class="pl-lg-10">
-                            <p class="text-lg-center">${user.puntos}</p>
+                            <p class="text-lg-center">${user.puntos ? user.puntos : "-"}</p>
                         </div>
                     </div>
                 </div>
@@ -547,7 +547,7 @@ var token;
                     </div>
                     <div class="col-8 col-md-5 col-lg-12 pl-0 pl-md-15">
                         <div class="pl-lg-10">
-                            <p class="text-lg-center">${user.nivel}</p>
+                            <p class="text-lg-center">${user.nivel ? user.nivel : "-"}</p>
                         </div>
                     </div>
                 </div>

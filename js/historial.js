@@ -6,6 +6,11 @@ var token;
 
 function consultar(){
     token = window.localStorage.getItem('token');
+    if (!token) {
+        setTimeout(function () {
+            $('#modal-unlogin').addClass('show');
+        }, 100);
+    }
     var params = new URLSearchParams(window.location.search);
     var usuario_id = params.get('usuario_id');
     $.ajax({

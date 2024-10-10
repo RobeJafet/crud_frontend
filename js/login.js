@@ -2,6 +2,9 @@
 $(function() {
     $('#login-form').submit(function(e) {
         e.preventDefault();
+
+
+
         var email = $('#email-input').val();
         var password = $('#password-input').val();
 
@@ -18,7 +21,7 @@ $(function() {
             success: function(data) {
                 window.localStorage.setItem('token', data.token);
                 window.localStorage.setItem('id', data.id);
-                window.location.href = './usuarios.html';
+                window.location.href = `./red.html?usuario_id=${window.localStorage.getItem('id')}`;
             }, error: function() {
                 $('#error-message').addClass('show');
             }
@@ -27,7 +30,7 @@ $(function() {
 
 
     if (window.localStorage.getItem('token')) {
-        window.location.href = './usuarios.html';
+        window.location.href = `./red.html?usuario_id=${window.localStorage.getItem('id')}`;
     }
     
 });
