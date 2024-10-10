@@ -326,7 +326,7 @@ function redAnalytics(id){
             `);
 
         },
-        error: function(xhr, status, error) {
+        error: function(error) {
             console.error('Error:', error);
         }
     });

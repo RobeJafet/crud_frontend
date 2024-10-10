@@ -432,6 +432,7 @@ var token;
       },
       error: function(error) {
         console.log(error);
+        alert(error.responseJSON.mensaje);
       }
     });
   });
